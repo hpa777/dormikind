@@ -1,0 +1,25 @@
+<div class="rounded-[1.25rem] bg-[linear-gradient(198deg,#fff_0%,#9eb1d9_100%)] pt-4 pr-2 pl-3 md:pt-[1.6rem] md:pb-4 md:pr-[1.6rem] md:pl-8 xl:rounded-[2.5rem] xl:p-[2.4rem]">
+    <table class="border-collapse text-[0.75rem] leading-[1.08] md:text-base xl:text-[1.44rem]">
+        <thead>
+            <tr>
+                <td class="text-my-violet w-32 pb-2.5 align-top font-bold md:w-48 md:pb-[1.2rem] xl:w-68 xl:pb-[1.8rem]">ВОЗРАСТ<br />РЕБЕНКА</td>
+                <td class="text-my-violet pb-2.5 align-top font-bold md:pb-[1.2rem] xl:pb-[1.8rem]">НОРМА<br />ПРОДОЛЖИТЕЛЬНОСТИ СНА</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in sleep_table %}
+            {% if loop.last %}
+            <tr>
+                <td class="text-my-violet py-2 align-top font-bold">{{item.title | safe}}</td>
+                <td class="py-2 align-top font-light text-black">{{item.value}}</td>
+            </tr>
+            {% else %}
+            <tr>
+                <td class="text-my-violet border-b-2 border-white py-2 align-top font-bold">{{item.title | safe}}</td>
+                <td class="border-b-2 border-white py-2 align-top font-light text-black">{{item.value}}</td>
+            </tr>
+            {% endif %}
+            {% endfor %}
+        </tbody>
+    </table>
+</div>

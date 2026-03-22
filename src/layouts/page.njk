@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="ru" classs="mls:text-base text-[4.8vw] sm:text-[3.9vw] md:text-base xl:text-[1.5vh]">
+    {% include '../components/head.njk' %}
+    <body class="font-nunito font-normal text-white">
+        <div
+            class="relative bg-[#0F2442] bg-[url('/images/night-bg-top.png')] bg-size-[100%] bg-top bg-no-repeat pt-[4.8rem] before:absolute before:inset-0 before:top-16 before:z-10 before:bg-[url('/images/stars.png')] before:bg-size-[100%_auto] before:bg-repeat-y md:pt-[7.2rem] md:before:top-[5.7rem] md:before:bg-[url('/images/stars-md.png')] xl:bg-[url('/images/night-bg-top-xl.png')] xl:pt-0 xl:before:bg-[url('/images/stars-xl.png')]">
+            {% include '../components/header.njk' %} {% include '../components/breadcrumbs.njk' %} {% include '../components/pagetitle.njk' %}
+            <main class="relative z-20">{% block content %} This is the default content {% endblock %}</main>
+            {% block after_content %}{% endblock %}
+            <div class="relative z-10 bg-[url('/images/foot-bg.png')] bg-cover bg-top bg-no-repeat pt-24 pb-12 md:bg-[url('/images/foot-bg-md.png')] xl:bg-[url('/images/foot-bg-xl.png')] xl:pt-36">
+                {% include '../components/footer.njk' %}
+            </div>
+        </div>
+    </body>
+</html>

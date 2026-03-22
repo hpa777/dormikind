@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="ru" classs="mls:text-base text-[4.8vw] sm:text-[3.9vw] md:text-base xl:text-[1.5vh]">
+    {% include '../components/head.njk' %}
+    <body class="font-nunito font-normal text-white">
+        <svg class="hidden">
+            <symbol id="main-logo" viewBox="0 0 209 30">
+                <path
+                    d="M1.63459 20.4493C3.35998 18.4493 3.92755 15.7976 3.92755 10.4043V0.246948H19.8194V20.4718H21.7945V30H17.8669V24.4269H3.92755V30H0V20.4718H1.63459V20.4493ZM8.05942 4.20203V10.4043C8.05942 15.3032 7.62807 18.4943 6.0843 20.4943H15.5967V4.20203H8.05942Z"
+                    fill="currentColor" />
+                <path
+                    d="M33.645 0C41.046 0 43.0665 2.58429 43.0665 11.8428C43.0665 22.5844 41.0233 24.7193 33.645 24.7193C25.7218 24.7193 24.2461 22.562 24.2461 11.8428C24.2461 2.58429 26.1758 0 33.645 0ZM33.645 20.7867C38.0493 20.7867 38.7758 19.8204 38.7758 12.3596C38.7758 4.89891 37.8903 3.93261 33.645 3.93261C29.3996 3.93261 28.5369 4.53936 28.5369 12.3596C28.5369 20.1799 29.2407 20.7867 33.645 20.7867Z"
+                    fill="currentColor" />
+                <path
+                    d="M50.7852 24.4269H46.5625V0.246948H55.916C61.2965 0.246948 64.1343 1.5728 64.1343 8.17959C64.1343 14.7864 62.0911 16.4718 56.3019 16.4718H50.7852V24.4044V24.4269ZM50.7852 12.5392H55.8933C58.7765 12.5392 59.8435 11.7976 59.8435 8.60656C59.8435 5.12339 58.7538 4.17956 55.8933 4.17956H50.7852V12.5392Z"
+                    fill="currentColor" />
+                <path d="M74.374 0.246948L80.3221 18.1797H80.4356L86.2701 0.246948H93.4669V24.4044H89.2442V4.0672L82.3199 24.4269H78.5286L71.627 4.20203V24.4269H67.4043V0.246948H74.3513H74.374Z" fill="currentColor" />
+                <path
+                    d="M116.579 0.246948V24.4044H112.356V8.4942C112.356 7.75262 112.379 5.97733 112.674 4.22451H112.651L103.388 24.4269H97.3496V0.246948H101.572V16.1122C101.572 16.8538 101.55 18.6516 101.254 20.4044H101.323L110.54 0.246948H116.579Z"
+                    fill="currentColor" />
+                <path d="M124.636 10.2695H126.475L133.944 0.246948H139.098L130.198 12.0223L140.028 24.4044H134.693L126.588 14.0897H124.613V24.4044H120.391V0.246948H124.613V10.247L124.636 10.2695Z" fill="currentColor" />
+                <path
+                    d="M161.936 0.246948V24.4044H157.713V8.4942C157.713 7.75262 157.736 5.97733 158.031 4.22451H158.009L148.746 24.4269H142.707V0.246948H146.93V16.1122C146.93 16.8538 146.907 18.6516 146.612 20.4044H146.68L155.875 0.246948H161.913H161.936Z"
+                    fill="currentColor" />
+                <path d="M169.998 10.2695H180.237V0.246948H184.46V24.4044H180.237V14.0897H169.998V24.4044H165.775V0.246948H169.998V10.247V10.2695Z" fill="currentColor" />
+                <path
+                    d="M188.84 20.4493C190.565 18.4493 191.133 15.7976 191.133 10.4043V0.246948H207.024V20.4718H209V30H205.072V24.4269H191.133V30H187.205V20.4718H188.84V20.4493ZM195.287 4.20203V10.4043C195.287 15.3032 194.856 18.4943 193.312 20.4943H202.824V4.20203H195.287Z"
+                    fill="currentColor" />
+            </symbol>
+        </svg>
+        <!-- Header-->
+        <header class="fixed top-0 left-0 z-53 w-full">
+            <div class="mls:pt-6 mls:flex-row container flex items-center justify-between pt-5 md:flex-row-reverse md:pt-11 xl:hidden">
+                <a href="#" class="text-my-blue mls:hidden hidden h-[2.2rem] w-32 place-content-center rounded-full bg-white text-sm md:grid">Где купить</a>
+                <a href="#" class="mls:ml-0 block w-[7.4rem] md:mx-auto md:w-40">
+                    <svg width="209" height="30">
+                        <use href="#main-logo"></use>
+                    </svg>
+                </a>
+                <button id="mob-menu" class="peer w-[1.8rem] md:w-10" onclick="this.classList.add('active')">
+                    <svg width="40" height="35" viewBox="0 0 40 35" fill="none" xmlns="http://www.w3.org/2000/svg" class="max-w-full">
+                        <rect width="40" height="3.82175" fill="white" />
+                        <rect y="15.5894" width="40" height="3.82175" fill="white" />
+                        <rect y="31.1782" width="40" height="3.82175" fill="white" />
+                    </svg>
+                </button>
+                <nav class="mls:text-left text-my-violet fixed inset-0 z-54 container hidden bg-white py-8 peer-[.active]:block md:bottom-auto md:text-center xl:hidden!">
+                    <div class="border-my-violet/30 mb-10 border-b pb-5">
+                        <svg width="209" height="30" class="inline-block w-40">
+                            <use href="#main-logo"></use>
+                        </svg>
+                    </div>
+                    <ul class="mls:grid-cols-2 grid gap-y-8 text-xl">
+                        <li class="mls:pl-16"><a href="">Особенности сна</a></li>
+                        <li class="mls:pl-16"><a href="">О Дормикинде</a></li>
+                        <li class="mls:pl-16"><a href="">Специалистам</a></li>
+                        <li class="mls:pl-16"><a href="">Родителям</a></li>
+                        <li class="mls:pl-16"><a href="">Где купить</a></li>
+                    </ul>
+                    <button class="absolute top-8 right-7 text-[4rem] leading-[0.5]" onclick="document.getElementById('mob-menu').classList.remove('active')">&times;</button>
+                </nav>
+            </div>
+            <div class="relative container hidden items-center gap-x-[3.8rem] pt-[3.3rem] text-2xl xl:flex">
+                <div class="absolute inset-0 -z-10 grid grow place-content-center pt-14">
+                    <svg width="209" height="30">
+                        <use href="#main-logo"></use>
+                    </svg>
+                </div>
+                <a class="decoration-my-yellow underline-offset-9 hover:underline" href="">Особенности сна</a>
+                <a class="decoration-my-yellow mr-auto underline-offset-9 hover:underline" href="">О Дормикинде</a>
+
+                <a class="decoration-my-yellow underline-offset-9 hover:underline" href="">Специалистам</a>
+                <a class="decoration-my-yellow underline-offset-9 hover:underline" href="">Родителям</a>
+                <a href="#" class="text-my-blue grid h-[2.44rem] w-[9.2rem] place-content-center rounded-full border border-white bg-white transition-colors hover:bg-transparent hover:text-white">Где купить</a>
+            </div>
+        </header>
+
+        <!-- /Header-->
+        <main class="relative overflow-clip">
+            <!--Boy-->
+            <div class="scene-1 sticky top-0 min-h-screen">
+                <div class="sticky top-0 h-screen">
+                    <picture>
+                        <source srcset="/images/first-part-bg-lg.png" media="(min-width: 1024px)" />
+                        <source srcset="/images/first-part-bg-md.png" media="(min-width: 768px)" />
+                        <img class="h-full w-full object-cover" src="/images/first-part-bg.png" alt="" />
+                    </picture>
+                    <!--Gradient bg-->
+                    <div
+                        class="absolute inset-0 bg-[linear-gradient(180deg,rgba(17,24,42,0)_0%,rgba(17,24,42,0.66)_41.49%,#11182a_93.7%)] opacity-0"
+                        data-move="to"
+                        data-trigger=".scene-1"
+                        data-start="center top"
+                        data-opacity="1"></div>
+                    <!--/Gradient bg-->
+                    <!--Clouds-->
+                    <div class="mls:max-h-[70%] mls:-right-40 absolute right-0 bottom-0 w-full lg:w-auto">
+                        <picture>
+                            <source srcset="/images/cloud-back-lg.png" media="(min-width: 1024px)" />
+                            <source srcset="/images/cloud-back-md.png" media="(min-width: 768px)" />
+                            <img src="/images/cloud-back.png" class="w-full lg:w-auto" alt="" data-move="to" data-y="350" data-start="center top" data-end="+=300%" />
+                        </picture>
+                    </div>
+                    <!--/Clouds-->
+                    <!--Pack-->
+                    <canvas id="my-canvas" class="mls:h-full absolute right-0 bottom-0 aspect-video h-[80%] opacity-0 md:h-[95%] xl:-bottom-20"></canvas>
+                    <!--/Pack-->
+                    <!--Clouds2-->
+                    <div class="mls:max-h-[70%] mls:-right-40 absolute right-0 -bottom-4 w-full md:-bottom-40 xl:bottom-0 xl:w-auto">
+                        <picture>
+                            <source srcset="/images/cloud-front-lg.png" media="(min-width: 1024px)" />
+                            <source srcset="/images/cloud-front-md.png" media="(min-width: 768px)" />
+                            <img src="/images/cloud-front.png" class="w-full lg:w-auto" alt="" data-move="to" data-y="350" data-start="center top" data-end="+=300%" />
+                        </picture>
+                    </div>
+                    <!--/Clouds2-->
+                    <div class="absolute inset-0" data-trigger=".scene-2" data-endtrigger=".scrubMarker1" data-start="top center" data-move="to">
+                        <div
+                            data-move="to"
+                            data-trigger="no"
+                            data-opacity="1"
+                            data-duration="3"
+                            data-delay="0.5"
+                            class="mls:h-full mls:py-14 mls:flex mls:flex-col mls:justify-center container pt-[5.7rem] opacity-0 md:pt-38 xl:pt-40">
+                            <p class="mls:text-6xl text-[2.56rem] leading-[1.1] font-extrabold uppercase md:text-[6.63rem] xl:text-[11.6rem]">Сказочный сон</p>
+                            <p class="text-[1.31rem] uppercase md:text-[1.88rem] xl:text-[2.81rem]">для активности днём</p>
+                            <div class="mt-[1.2rem] flex h-[1.81rem] text-sm md:h-[2.19rem] md:text-[0.94rem] xl:mt-14 xl:h-[3.44rem] xl:text-xl">
+                                <a href="" class="group text-my-violet flex transition-colors hover:text-white">
+                                    <span class="grid aspect-square h-full place-content-center rounded-full border border-white bg-white px-2 transition-all group-hover:rotate-90 group-hover:bg-transparent">
+                                        <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg" class="max-w-full">
+                                            <path
+                                                d="M0.420103 16.4589C-0.154863 17.0553 -0.137479 18.0049 0.458932 18.5799C1.05534 19.1549 2.00493 19.1375 2.5799 18.5411L1.5 17.5L0.420103 16.4589ZM18.4245 1.47254C18.4093 0.644256 17.7255 -0.0149122 16.8973 0.000251293L3.39951 0.247355C2.57122 0.262518 1.91206 0.946271 1.92722 1.77456C1.94238 2.60285 2.62614 3.26202 3.45442 3.24685L15.4524 3.0272L15.6721 15.0252C15.6872 15.8535 16.371 16.5127 17.1993 16.4975C18.0276 16.4823 18.6867 15.7986 18.6716 14.9703L18.4245 1.47254ZM1.5 17.5L2.5799 18.5411L18.0046 2.54107L16.9247 1.5L15.8448 0.458932L0.420103 16.4589L1.5 17.5Z"
+                                                fill="currentColor" />
+                                        </svg>
+                                    </span>
+                                    <span class="grid h-full place-content-center rounded-full border border-white bg-white px-3.5 transition-colors group-hover:bg-transparent md:px-7 xl:px-[2.4rem]">Купить сейчас</span>
+                                </a>
+                                <a href="" class="hover:text-my-violet ml-4 grid h-full place-content-center rounded-full border border-white px-3.5 transition-colors hover:bg-white md:px-7 xl:px-[2.4rem]">Инструкция</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/Boy-->
+            <div class="scrubMarker1 absolute top-[177vh] left-0 z-10 h-1 w-full"></div>
+            <div class="scrubMarker2 absolute top-[280vh] left-0 z-10 h-1 w-full"></div>
+            <!--Scene7-->
+            <div class="scene-2 sticky top-0 min-h-[250vh]">
+                <div class="mls:flex-col mls:justify-center sticky top-0 container flex h-screen items-start pt-[4.8rem] md:pt-[18.1vh] xl:items-center xl:pt-24">
+                    <ul class="mls:text-lg max-w-[80%] space-y-5 text-sm leading-snug font-extrabold uppercase md:max-w-1/2 md:text-2xl xl:w-2xl xl:space-y-14 xl:text-[2.5rem]">
+                        <li class="flex items-start gap-x-4 md:gap-x-8">
+                            <div class="relative before:opacity-0 before:content-['-']">
+                                <img
+                                    class="star-bullit mls:top-[21vh] mls:left-[73vw] absolute top-[35vh] left-[40vw] w-[2.3em] max-w-none -translate-1/2 opacity-0 lg:top-[18vh] lg:left-[61vw]"
+                                    data-end="+=100%"
+                                    src="/images/star-bullit.png"
+                                    alt="" />
+                            </div>
+                            <div data-move data-trigger=".scrubMarker2" data-start="top 30%" data-y="100">Создан специально для детей</div>
+                        </li>
+                        <li class="flex items-start gap-x-4 md:gap-x-8">
+                            <div class="relative before:opacity-0 before:content-['-']">
+                                <img
+                                    class="star-bullit mls:top-[9vh] mls:left-[72vw] absolute top-[35vh] left-[40vw] w-[2.3em] max-w-none -translate-1/2 opacity-0 lg:top-[1vh] lg:left-[61vw]"
+                                    data-end="+=120%"
+                                    src="/images/star-bullit.png"
+                                    alt="" />
+                            </div>
+                            <div data-move data-trigger=".scrubMarker2" data-start="top 20%" data-y="100">Разрешен к применению с рождения</div>
+                        </li>
+                        <li class="flex items-start gap-x-4 md:gap-x-8">
+                            <div class="relative before:opacity-0 before:content-['-']">
+                                <img
+                                    class="star-bullit mls:-top-[8vh] mls:left-[71vw] absolute top-[35vh] left-[40vw] w-[2.3em] max-w-none -translate-1/2 opacity-0 lg:-top-[18vh] lg:left-[61vw]"
+                                    data-end="+=150%"
+                                    src="/images/star-bullit.png"
+                                    alt="" />
+                            </div>
+                            <div data-move data-trigger=".scrubMarker2" data-start="top 10%" data-y="100">
+                                способствует уменьшению ритуалов перед сном <span class="lowercase">(укачивание, соска, мультфильмы, и др.)*</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--/Scene7-->
+            <!--Night-bg-->
+            <div class="night-bg sticky top-0 h-screen overflow-clip">
+                <picture>
+                    <source srcset="/images/night-bg-lg.png" media="(min-width: 1024px)" />
+                    <source srcset="/images/night-bg-ls.png" media="(max-width: 932px) and (orientation: landscape)" />
+                    <img data-move="to" data-start="top top" data-opacity="1" src="/images/night-bg.png" class="h-full w-full object-cover opacity-0" alt="" />
+                </picture>
+                <div class="mls:hidden">
+                    <img scroll-zoom data-move data-trigger=".night-bg" data-start="top top" data-scale="0" class="absolute top-[27.1vh] -left-[1%] hidden scale-[0.2] lg:block" src="/images/star.png" alt="" />
+                    <img scroll-zoom data-move data-trigger=".night-bg" data-start="top top" data-scale="0" class="absolute top-[36.4vh] left-[0.3%] hidden scale-[0.4] lg:block" src="/images/star.png" alt="" />
+                    <img scroll-zoom data-move data-trigger=".night-bg" data-start="top top" data-scale="0" class="absolute top-[50.5vh] left-[1.7%] hidden scale-[0.3] lg:block" src="/images/star.png" alt="" />
+                    <img scroll-zoom data-move data-trigger=".night-bg" data-start="top top" data-scale="0" class="absolute top-[51.9vh] -left-[2.6%] hidden scale-[0.2] lg:block" src="/images/star.png" alt="" />
+                    <img scroll-zoom data-move data-trigger=".night-bg" data-start="top top" data-scale="0" class="absolute top-[58.7vh] -left-[0.7%] hidden scale-[0.2] lg:block" src="/images/star.png" alt="" />
+                    <img scroll-zoom data-move data-trigger=".night-bg" data-start="top top" data-scale="0" class="absolute top-[62.6vh] left-[2.3%] hidden scale-[0.5] lg:block" src="/images/star.png" alt="" />
+                    <img scroll-zoom data-move data-trigger=".night-bg" data-start="top top" data-scale="0" class="absolute top-[9.3vh] left-[92.3%] hidden scale-[0.3] lg:block" src="/images/star.png" alt="" />
+                    <img scroll-zoom data-move data-trigger=".night-bg" data-start="top top" data-scale="0" class="absolute top-[16.8vh] left-[88.3%] hidden scale-[0.3] lg:block" src="/images/star.png" alt="" />
+                    <img scroll-zoom data-move data-trigger=".night-bg" data-start="top top" data-scale="0" class="absolute top-[27.1vh] left-[91%] hidden scale-[0.2] lg:block" src="/images/star.png" alt="" />
+                    <img scroll-zoom data-move data-trigger=".night-bg" data-start="top top" data-scale="0" class="absolute top-[42.2vh] left-[92.1%] hidden scale-[0.4] lg:block" src="/images/star.png" alt="" />
+                    <img scroll-zoom data-move data-trigger=".night-bg" data-start="top top" data-scale="0" class="absolute top-[50.1vh] left-[88.2%] hidden scale-[0.2] lg:block" src="/images/star.png" alt="" />
+                    <img scroll-zoom data-move data-trigger=".night-bg" data-start="top top" data-scale="0" class="absolute top-[52vh] left-[92.6%] hidden scale-[0.2] lg:block" src="/images/star.png" alt="" />
+                    <img scroll-zoom data-move data-trigger=".night-bg" data-start="top top" data-scale="0" class="absolute top-[59.2vh] left-[84.4%] hidden scale-[0.15] lg:block" src="/images/star.png" alt="" />
+                    <img scroll-zoom data-move data-trigger=".night-bg" data-start="top top" data-scale="0" class="absolute top-[62.8vh] left-[87.8%] hidden scale-[0.5] lg:block" src="/images/star.png" alt="" />
+                </div>
+                <div id="clouds-back" class="absolute bottom-0 h-0 w-full">
+                    <img src="/images/clouds-back-lg.png" alt="" class="absolute top-0 left-1/2 h-auto min-h-full w-auto max-w-none min-w-full -translate-x-1/2" />
+                </div>
+            </div>
+            <!--/Night-bg-->
+            <!--Scene8-->
+            <div class="sticky top-0 z-10 h-[300vh]">
+                <div class="mls:py-0 scene-8 sticky top-0 container h-screen pt-[4.3rem] lg:pt-24 lg:pb-[12vh]">
+                    <div data-move="to" data-opacity="0" data-trigger=".scene-10" data-start="bottom center" data-end="+10" class="mls:flex-row-reverse flex h-full flex-col justify-between lg:flex-row-reverse">
+                        <div
+                            data-move="to"
+                            data-trigger=".scene-10"
+                            data-start="top bottom"
+                            data-end="+=400"
+                            data-x="200"
+                            data-opacity="0"
+                            class="mls:w-1/2 mls:px-0 mls:gap-y-4 flex grow flex-col justify-center md:px-12 lg:w-1/2 lg:px-0 lg:pt-16 lg:pl-12">
+                            <h2
+                                data-move
+                                data-start="top top"
+                                data-y="200"
+                                class="mls:text-base mls:text-left mls:mb-0 mb-2.5 text-center text-sm font-extrabold uppercase md:mb-11 md:text-xl lg:mb-5 lg:text-left xl:text-[2.19rem]">
+                                Дормикинд способствует:
+                            </h2>
+                            <ul class="mls:text-base mls:pl-3 space-y-1.5 pl-8 text-sm leading-[1.1] font-light md:space-y-3 md:text-xl lg:pl-8 xl:text-[2.19rem]">
+                                <li
+                                    data-move
+                                    data-start="top top"
+                                    data-y="200"
+                                    class="relative before:absolute before:top-1.5 before:-left-2.5 before:aspect-square before:w-1 before:rounded-full before:bg-white lg:before:top-3 lg:before:-left-8 lg:before:w-3">
+                                    более спокойному и комфортному засыпанию;
+                                </li>
+                                <li
+                                    data-move
+                                    data-start="top top"
+                                    data-y="200"
+                                    class="relative before:absolute before:top-1.5 before:-left-2.5 before:aspect-square before:w-1 before:rounded-full before:bg-white lg:before:top-3 lg:before:-left-8 lg:before:w-3">
+                                    сокращению времени засыпания и снижению ночных пробуждений;
+                                </li>
+                                <li
+                                    data-move
+                                    data-start="top top"
+                                    data-y="200"
+                                    class="relative before:absolute before:top-1.5 before:-left-2.5 before:aspect-square before:w-1 before:rounded-full before:bg-white lg:before:top-3 lg:before:-left-8 lg:before:w-3">
+                                    увеличению продолжительности ночного сна;
+                                </li>
+                                <li
+                                    data-move
+                                    data-start="top top"
+                                    data-y="200"
+                                    class="relative before:absolute before:top-1.5 before:-left-2.5 before:aspect-square before:w-1 before:rounded-full before:bg-white lg:before:top-3 lg:before:-left-8 lg:before:w-3">
+                                    уменьшению возбудимости и раздражительности;
+                                </li>
+                                <li
+                                    data-move
+                                    data-start="top top"
+                                    data-y="200"
+                                    class="relative before:absolute before:top-1.5 before:-left-2.5 before:aspect-square before:w-1 before:rounded-full before:bg-white lg:before:top-3 lg:before:-left-8 lg:before:w-3">
+                                    уменьшению ритуалов перед сном (укачивание, соска, мультфильмы и др.)*
+                                </li>
+                            </ul>
+                            <div
+                                data-move
+                                data-start="top top"
+                                data-y="200"
+                                class="mls:justify-start mls:mt-0 mt-2 flex h-[1.81rem] text-sm md:mt-11 md:h-[2.19rem] md:justify-center md:text-[0.94rem] lg:mt-[1.2rem] xl:mt-8 xl:h-[3.44rem] xl:text-xl">
+                                <a href="" class="group text-my-violet flex transition-colors hover:text-white">
+                                    <span class="grid aspect-square h-full place-content-center rounded-full border border-white bg-white px-2 transition-all group-hover:rotate-90 group-hover:bg-transparent">
+                                        <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg" class="max-w-full">
+                                            <path
+                                                d="M0.420103 16.4589C-0.154863 17.0553 -0.137479 18.0049 0.458932 18.5799C1.05534 19.1549 2.00493 19.1375 2.5799 18.5411L1.5 17.5L0.420103 16.4589ZM18.4245 1.47254C18.4093 0.644256 17.7255 -0.0149122 16.8973 0.000251293L3.39951 0.247355C2.57122 0.262518 1.91206 0.946271 1.92722 1.77456C1.94238 2.60285 2.62614 3.26202 3.45442 3.24685L15.4524 3.0272L15.6721 15.0252C15.6872 15.8535 16.371 16.5127 17.1993 16.4975C18.0276 16.4823 18.6867 15.7986 18.6716 14.9703L18.4245 1.47254ZM1.5 17.5L2.5799 18.5411L18.0046 2.54107L16.9247 1.5L15.8448 0.458932L0.420103 16.4589L1.5 17.5Z"
+                                                fill="currentColor" />
+                                        </svg>
+                                    </span>
+                                    <span class="grid h-full place-content-center rounded-full border border-white bg-white px-3.5 transition-colors group-hover:bg-transparent md:px-7 xl:px-[2.4rem]">Купить сейчас</span>
+                                </a>
+                                <a href="" class="hover:text-my-violet ml-4 grid h-full place-content-center rounded-full border border-white px-3.5 transition-colors hover:bg-white md:px-7 xl:px-[2.4rem]">Инструкция</a>
+                            </div>
+                        </div>
+                        <div data-move="to" data-opacity="1" data-start="top top" class="mls:w-1/2 transform-none! opacity-0 lg:w-1/2">
+                            <canvas id="boy-w-pack" class="mls:bottom-0 mls:absolute mls:-left-8 mls:w-auto mls:h-[71%] aspect-[1.38] w-full lg:absolute lg:-bottom-12 lg:left-0 lg:w-1/2 xl:h-[80%] xl:w-auto"></canvas>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-0 h-0 w-full">
+                        <img src="/images/clouds-back-lg.png" alt="" class="absolute top-0 left-1/2 h-auto min-h-full w-auto max-w-none min-w-full -translate-x-1/2" />
+                    </div>
+                </div>
+            </div>
+            <!--/Scene8-->
+            <!--Scene10-->
+            <div class="scene-10 sticky top-0 h-[300vh]">
+                <div class="sticky top-0 h-screen">
+                    <div class="mls:top-1/2 card absolute top-[38%] left-1/2 aspect-square w-[425%] -translate-x-1/2 md:top-[30%] xl:top-1/2 xl:w-[300%]">
+                        <div class="absolute left-1/2 min-h-60 w-56 -translate-1/2 rounded-2xl bg-[linear-gradient(158deg,#fff_0%,#9eb1d9_100%)] p-3.5 lg:w-80 xl:min-h-128 xl:w-100 xl:rounded-[2.6rem] xl:p-12">
+                            <h3 class="text-my-violet mb-4 text-sm font-extrabold uppercase md:text-base xl:text-2xl">Дормикинд сопоставимо эффективен у детей</h3>
+                            <ul class="list-disc space-y-0.5 pl-5 text-sm leading-none font-light text-black md:text-base lg:leading-[1.2] xl:space-y-4 xl:text-[1.44rem]">
+                                <li>до 1 года</li>
+                                <li>с 1 года до 3 лет</li>
+                                <li>с 3 лет до 6 лет</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mls:top-1/2 card absolute top-[38%] left-1/2 aspect-square w-[425%] -translate-x-1/2 md:top-[30%] xl:top-1/2 xl:w-[300%]">
+                        <div class="absolute left-1/2 min-h-60 w-56 -translate-1/2 rounded-2xl bg-[linear-gradient(180deg,#ffe584_0%,#fcc600_100%)] p-3.5 lg:w-80 xl:min-h-128 xl:w-100 xl:rounded-[2.6rem] xl:p-12">
+                            <h3 class="text-my-violet mb-4 text-sm font-extrabold uppercase md:text-base xl:text-2xl">при трудностях с засыпанием:</h3>
+                            <ul class="list-disc space-y-0.5 pl-5 text-sm leading-none font-light text-black md:text-base xl:space-y-4 xl:text-[1.44rem] xl:leading-[1.2]">
+                                <li>Засыпание во время кормления</li>
+                                <li>Необходимость укачивания на руках или в кроватке</li>
+                                <li>Наступление сна в постели у родителей</li>
+                                <li>Отказ от сна в отдельной кровати</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mls:top-1/2 card absolute top-[38%] left-1/2 aspect-square w-[425%] -translate-x-1/2 md:top-[30%] xl:top-1/2 xl:w-[300%]">
+                        <div class="absolute left-1/2 min-h-60 w-56 -translate-1/2 rounded-2xl bg-[linear-gradient(158deg,#fff_0%,#9eb1d9_100%)] p-3.5 lg:w-80 xl:min-h-128 xl:w-100 xl:rounded-[2.6rem] xl:p-6">
+                            <h3 class="text-my-violet mb-4 text-sm font-extrabold uppercase md:text-base xl:text-2xl">при нарушениях сна, которые могут проявляться как: </h3>
+                            <ul class="list-disc space-y-0.5 pl-5 text-sm leading-none font-light text-black md:text-base xl:space-y-1 xl:text-[1.44rem] xl:leading-[1.2]">
+                                <li>Беспокойный сон</li>
+                                <li>Наушение суточного ритма сна, ребенок путает день с ночью</li>
+                                <li>Раздражительность</li>
+                                <li>Беспокойство, капризность</li>
+                                <li>Плаксивость</li>
+                                <li>Частые ночные пробуждения</li>
+                                <li>Длительное бодрствование ночью</li>
+                                <li>Кошмары</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/Scene10-->
+            <!--Scene15-->
+            <div class="sticky top-0 h-screen xl:z-51">
+                <div class="sticky top-0 container grid h-full place-content-center pt-[4.3rem] pb-[12vh] xl:pt-24">
+                    <h2 data-move="to" data-trigger=".scene-15" data-start="bottom bottom" data-end="bottom center" data-opacity="0" class="text-center text-[1.44rem] font-extrabold uppercase md:text-3xl xl:text-[4rem]">
+                        Дормикинд может <br />помочь <span class="text-white/45">ребёнку <br />с рождения до 6 лет:</span>
+                    </h2>
+                </div>
+            </div>
+            <div class="scene-15 container flex flex-col gap-y-[22vh] pb-[50vh]">
+                <div class="w-52 -rotate-12 rounded-3xl bg-[#2e1c86] p-5 md:w-3xs xl:w-84 xl:rounded-[2.6rem] xl:p-7">
+                    <ul class="list-disc space-y-3 pl-6 text-sm font-extrabold uppercase md:text-base xl:text-[1.38rem]">
+                        <li>Становление режима ребёнка</li>
+                        <li>Постепенное отлучение ребенка от груди</li>
+                    </ul>
+                </div>
+                <div class="ml-auto w-52 rotate-12 rounded-3xl bg-[linear-gradient(168deg,#fff_37.44%,#9eb1d9_100%)] p-5 pr-4 md:w-3xs xl:w-84 xl:rounded-[2.6rem] xl:p-7">
+                    <ul class="text-my-violet list-disc space-y-3 pl-6 text-sm font-extrabold uppercase md:text-base xl:text-[1.38rem]">
+                        <li>Отучение ребёнка от пустышки/соски</li>
+                        <li>Рождение следующего ребёнка</li>
+                    </ul>
+                </div>
+                <div class="w-52 -rotate-12 rounded-3xl bg-[#2e1c86] p-5 md:w-3xs xl:w-84 xl:rounded-[2.6rem] xl:p-7">
+                    <ul class="list-disc space-y-3 pl-6 text-sm font-extrabold uppercase md:text-base xl:text-[1.38rem]">
+                        <li>Поездка или переезд</li>
+                        <li>Посещение родственников</li>
+                    </ul>
+                </div>
+                <div class="ml-auto w-52 rotate-12 rounded-3xl bg-[linear-gradient(168deg,#fff_37.44%,#9eb1d9_100%)] p-5 pr-4 md:w-3xs xl:w-84 xl:rounded-[2.6rem] xl:p-7">
+                    <ul class="text-my-violet list-disc space-y-3 pl-6 text-sm font-extrabold uppercase md:text-base xl:text-[1.38rem]">
+                        <li>Появление няни</li>
+                        <li>Посещение детского сада, спортивной секции или кружка творчества</li>
+                    </ul>
+                </div>
+            </div>
+            <!--/Scene15-->
+            <!--Scene22-->
+            <div class="scene-22 sticky top-0 z-52 h-[200vh]">
+                <div
+                    data-move="to"
+                    data-opacity="0"
+                    data-trigger=".scene-24"
+                    data-start="top bottom"
+                    data-end="top top"
+                    class="mls:flex mls:flex-col mls:justify-center mls:gap-y-7 mls:py-0 sticky top-0 container h-screen pt-20 md:flex md:flex-col md:justify-evenly md:pt-32 md:pb-80">
+                    <h2 class="text-center text-xl font-extrabold uppercase md:text-3xl xl:text-[4rem]">ОТЗЫВЫ</h2>
+                    <!-- Slider main container -->
+                    <div class="mls:mt-0 mls:px-8 relative mt-8 sm:px-5 md:px-14 xl:px-32">
+                        <div
+                            class="swiper-button-prev mls:h-8 mls:w-8 mls:-left-5 hover:text-my-violet absolute top-1/2 -left-5 grid h-8 w-8 -translate-y-1/2 cursor-pointer place-content-center rounded-full border-2 border-white p-2 transition-colors hover:bg-white md:left-0 md:h-10 md:w-10 xl:h-14 xl:w-14">
+                            <svg class="max-w-full" xmlns="http://www.w3.org/2000/svg" width="23" height="30" fill="none" viewBox="0 0 23 30">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m21.744 1-20 13 20 15" />
+                            </svg>
+                        </div>
+                        <div
+                            class="swiper-button-next mls:h-8 mls:w-8 mls:-right-5 hover:text-my-violet absolute top-1/2 -right-5 grid h-8 w-8 -translate-y-1/2 rotate-180 cursor-pointer place-content-center rounded-full border-2 border-white p-2 transition-colors hover:bg-white md:right-0 md:h-10 md:w-10 xl:h-14 xl:w-14">
+                            <svg class="max-w-full" xmlns="http://www.w3.org/2000/svg" width="23" height="30" fill="none" viewBox="0 0 23 30">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m21.744 1-20 13 20 15" />
+                            </svg>
+                        </div>
+                        <div class="swiper mls:h-41 h-76 w-full p-px sm:h-56 xl:h-88">
+                            <!-- Additional required wrapper -->
+                            <div class="swiper-wrapper">
+                                <!-- Slides -->
+                                {% for i in [1,2,3,4,5,6,7] %}
+                                <div class="swiper-slide mls:px-0 px-5 sm:px-0">
+                                    <div class="swiper-slide__body flex h-full w-full flex-col rounded-[1.25rem] border border-white p-7 sm:p-5 xl:rounded-[2.6rem] xl:p-10">
+                                        <div class="mb-6 flex h-3 gap-x-2.5 sm:mb-3 sm:h-2 xl:mb-10 xl:h-auto">
+                                            <img src="/images/star.svg" alt="" />
+                                            <img src="/images/star.svg" alt="" />
+                                            <img src="/images/star.svg" alt="" />
+                                            <img src="/images/star.svg" alt="" />
+                                            <img src="/images/star.svg" alt="" />
+                                        </div>
+                                        <p class="mls:line-clamp-4 mls:text-sm swiper-slide__text line-clamp-10 text-sm leading-[1.1] font-light sm:text-[0.7rem] md:text-base xl:line-clamp-6 xl:text-[1.44rem]">
+                                            Очень хорошие таблетки, чтобы успокоить и наладить сон ребенка. Сын стал плохо спать с 2-ух месяцев, каждый скачок роста сказывался на нем всё хуже и хуже. Это нервозность,
+                                            капризность, плаксивость, сны в обед превратились в испытание для родителей - либо сон на руках, а это 2 часам всё равно он не выпавшийся 😕 либо в кроватке, но убаюкивать каждые
+                                            10 мин 😵‍💫. Ночью спал ещё более менее . Таблетки купила сразу, но сын аллергик и давать боялась. Но очередной скачок развития добил 🤦‍♀️ ночные сны тоже превратились в кошмар! От
+                                            переворота с одного бока на другой сына стал истошно вопить по ночам 🤦‍♀️- берёшь на руки носишь - ложишь, ему надоело лежать на одном боку захотел перевернулся и снова ор 🤯. И
+                                            начали давать по 1 таблетке утром и вечером (нашему 6 месяцев). Эффект наступил через 3 дня. Сначала улучшился дневной сон, не надо было долго укачивать, просыпаться стал реже.
+                                            Теперь спит свой положенный час. И наладился ночной сон! 🥳 спокойно себе переворачивается на бочки и не кричит! И это эффект на третий день от двух таблеток. Ещё улучшился
+                                            аппетит, часто болеет от старшего и сбивается режим питания, но чудо таблетки и тут помогли! Но со временем появилась на таблетки аллергия 😭 сначала сухие ножки потом сухие и
+                                            красные щеки. Дальше пить не смогли, хотя эффект потрясающий! Всем советую его попробовать если есть проблемы со сном, если будет аллергия то давать перестанете 🤷‍♀️
+                                        </p>
+                                        <p class="mls:text-sm mt-auto text-sm font-bold sm:text-[0.7rem] md:text-base xl:text-lg">Илона П.</p>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                                <!--/Slides -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/Scene22-->
+            <!--Scene24-->
+            <div class="scene-24 sticky top-0 z-52 h-[300vh]" style="opacity: 0.001">
+                <div class="mls:py-14 sticky top-0 container h-screen pt-28 sm:pt-20 md:pt-40 xl:pt-40">
+                    <h1 class="mls:hidden mb-4 text-center text-4xl font-black uppercase md:text-8xl xl:mb-0 xl:text-[14.44rem]">дормикинд</h1>
+                    <div class="mls:h-full mls:flex mls:flex-row-reverse lg:flex">
+                        <div class="mls:relative mls:w-1/2 lg:relative lg:w-1/2">
+                            <canvas id="boy-w-pack-foot" class="mls:-bottom-[16vh] absolute bottom-0 left-0 aspect-[1.38] w-full lg:top-[12vh] lg:bottom-auto lg:left-[14%] xl:top-4 xl:h-[56vh] xl:w-auto"></canvas>
+                        </div>
+                        <div class="mls:flex mls:flex-col mls:justify-center mls:text-center mls:w-1/2 lg:w-1/2 lg:pl-[7.3rem]">
+                            <p class="mls:block hidden text-4xl font-black uppercase">дормикинд</p>
+                            <p class="text-center uppercase md:text-2xl lg:text-left xl:text-[2.8rem] xl:leading-[1.3]">сказочный сон <br />для активности днём!</p>
+                            <div class="mt-[1.2rem] flex h-[1.81rem] justify-center text-sm md:h-[2.19rem] md:text-[0.94rem] lg:justify-start xl:mt-8 xl:h-[3.44rem] xl:text-xl">
+                                <a href="" class="group text-my-violet flex transition-colors hover:text-white">
+                                    <span class="grid aspect-square h-full place-content-center rounded-full border border-white bg-white px-2 transition-all group-hover:rotate-90 group-hover:bg-transparent">
+                                        <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg" class="max-w-full">
+                                            <path
+                                                d="M0.420103 16.4589C-0.154863 17.0553 -0.137479 18.0049 0.458932 18.5799C1.05534 19.1549 2.00493 19.1375 2.5799 18.5411L1.5 17.5L0.420103 16.4589ZM18.4245 1.47254C18.4093 0.644256 17.7255 -0.0149122 16.8973 0.000251293L3.39951 0.247355C2.57122 0.262518 1.91206 0.946271 1.92722 1.77456C1.94238 2.60285 2.62614 3.26202 3.45442 3.24685L15.4524 3.0272L15.6721 15.0252C15.6872 15.8535 16.371 16.5127 17.1993 16.4975C18.0276 16.4823 18.6867 15.7986 18.6716 14.9703L18.4245 1.47254ZM1.5 17.5L2.5799 18.5411L18.0046 2.54107L16.9247 1.5L15.8448 0.458932L0.420103 16.4589L1.5 17.5Z"
+                                                fill="currentColor" />
+                                        </svg>
+                                    </span>
+                                    <span class="grid h-full place-content-center rounded-full border border-white bg-white px-3.5 transition-colors group-hover:bg-transparent md:px-7 xl:px-[2.4rem]">Купить сейчас</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/Scene24-->
+            <!--Footer-->
+            <div class="scene-26 relative z-52 xl:sticky xl:top-0 xl:h-screen">
+                <div class="xl:sticky xl:top-0 xl:flex xl:h-full xl:flex-col xl:justify-between">
+                    <div class="mls:pb-[100vh] container pt-44 pb-[100vh] md:pb-[19vh] xl:pb-0">
+                        <h2 data-move="to" data-opacity="0" data-start="top 100px" data-end="+=100" class="text-sm font-medium md:text-lg xl:text-2xl">Ссылки на источники:</h2>
+                        <ol class="mt-[1.4rem] list-decimal pl-[1.6rem] text-[0.7rem] font-light md:text-base xl:text-lg">
+                            <li data-move="to" data-opacity="0" data-start="top 100px" data-end="+=100">
+                                <a class="decoration-my-yellow hover:underline" target="_blank" rel="nofollow" href="https://d-l.com.ua/uploads/files/2014/8%20(37)/58380712.pdf"
+                                    >https://d-l.com.ua/uploads/files/2014/8%20(37)/58380712.pdf</a
+                                >
+                            </li>
+                            <li data-move="to" data-opacity="0" data-start="top 100px" data-end="+=100">
+                                <a
+                                    class="decoration-my-yellow hover:underline"
+                                    target="_blank"
+                                    rel="nofollow"
+                                    href="https://www.mediasphera.ru/issues/zhurnal-nevrologii-i-psikhiatrii-im-s-s-korsakova-2/2019/7/1199772982019072025/annotation"
+                                    >https://www.mediasphera.ru/issues/zhurnal-nevrologii-i-psikhiatrii-im-s-s-korsakova-2/2019/7/1199772982019072025/annotation</a
+                                >
+                            </li>
+                            <li data-move="to" data-opacity="0" data-start="top 100px" data-end="+=100">
+                                <a class="decoration-my-yellow hover:underline" target="_blank" rel="nofollow" href="https://remedium-nn.ru/?id=7693&download=1">https://remedium-nn.ru/?id=7693&download=1</a>
+                            </li>
+                            <li data-move="to" data-opacity="0" data-start="top 100px" data-end="+=100">
+                                Miek C. Jong, Lydia Ilyenko, Irina Kholodova, Cynthia Verwer, Julia Burkart, Stephan Weber, Thomas Keller, Petra Klement A Comparative Randomized Controlled Clinical Trial on the
+                                Effectiveness, Safety, and Tolerability of a Homeopathic Medicinal Product in Children with Sleep Disorders and Restlessness. Evidence-Based Complementary and Alternative Medicine / 2016
+                                Article ID 9539030, 11 pages, 2016.
+                                <a class="decoration-my-yellow hover:underline" target="_blank" rel="nofollow" href="https://doi.org/10.1155/2016/9539030">https://doi.org/10.1155/2016/9539030</a>
+                            </li>
+                            <li data-move="to" data-opacity="0" data-start="top 100px" data-end="+=100">
+                                Хачатрян Л. Г., Погорелова М. С., Геппе Н. А., Лемешко И. Д., Касанаве Е. В., Фролкова Е. В., Трепилец В. М. Проблемы нарушения сна у детей раннего возраста: вопросы диагностики и коррекции.
+                                Журнал неврологии и психиатрии им. С.С. Корсакова. Спецвыпуски. 2019;119(7-2):25-32.
+                                <a class="decoration-my-yellow hover:underline" target="_blank" rel="nofollow" href="https://doi.org/10.17116/jnevro201911907225">https://doi.org/10.17116/jnevro201911907225</a>
+                            </li>
+                            <li data-move="to" data-opacity="0" data-start="top 100px" data-end="+=100">
+                                Сухоносова O. Ю. , Молочек Н. В. Эксперимент в корректировке симптоматики повышенной раздражительности и нарушения сна у детей младшего возраста. Педиатрия, Акушерство и Гинекология №. 2,
+                                2009
+                            </li>
+                        </ol>
+                    </div>
+
+                    <div id="footer" class="opacity-0" data-move="to" data-opacity="1" data-start="top bottom" data-end="bottom bottom">
+                        {% include '../components/footer.njk' %}
+                    </div>
+                </div>
+            </div>
+            <!--/Footer-->
+        </main>
+        <script type="module" src="/src/js/main.js"></script>
+        <script>
+            window.scrollTo(0, 0)
+            history.scrollRestoration = 'manual'
+            //history.scrollRestoration = 'auto'
+        </script>
+    </body>
+</html>

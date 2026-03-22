@@ -1,0 +1,30 @@
+{
+    "pagetitle": "Родителям детей до 3-х лет",
+    "breadcrumbs" : ["Родителям", "детей до 3-х лет"],
+    "cards": [
+        {
+            "name": "Как помочь ребенку быстрее засыпать и лучше спать?",
+            "image": "/images/parents_img_1.png"
+        },
+         {
+            "name": "Что делать, если ребенок плачет во сне?",
+            "image": "/images/parents_img_2.png"
+        },
+         {
+            "name": "Почему ребенок плачет перед сном?",
+            "image": "/images/parents_img_3.png"
+        },
+         {
+            "name": "Как помочь ребенку быстрее засыпать и лучше спать?",
+            "image": "/images/parents_img_4.png"
+        },
+         {
+            "name": "Что делать, если ребенок плачет во сне?",
+            "image": "/images/parents_img_5.png"
+        },
+         {
+            "name": "Почему ребенок плачет перед сном?",
+            "image": "/images/parents_img_6.png"
+        }
+    ]
+}

@@ -1,0 +1,10 @@
+<div class="relative z-20 container xl:mt-16">
+    <ul class="flex text-xs font-light xl:text-base">
+        <li class="decoration-my-yellow after:mx-1 after:content-['>'] hover:underline"><a href="">Главная</a></li>
+        {% for item in breadcrumbs %} {% if loop.last %}
+        <li>{{item}}</li>
+        {% else %}
+        <li class="decoration-my-yellow after:mx-1 after:content-['>'] hover:underline"><a href="">{{item}}</a></li>
+        {% endif %} {% endfor %}
+    </ul>
+</div>

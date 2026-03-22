@@ -1,0 +1,94 @@
+@import 'tailwindcss';
+
+@theme {
+    --font-nunito: 'Nunito', sans-serif;
+    --breakpoint-2xl: 104.5rem;
+
+    --color-my-blue: #051140;
+    --color-my-violet: #2c246f;
+    --color-my-yellow: #fcc600;
+
+    --breakpoint-*: initial;
+    --breakpoint-sm: 600px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1280px;
+    --breakpoint-2xl: 1700px;
+}
+@custom-variant mls (@media (max-width: 932px) and (orientation: landscape));
+
+@utility container {
+    margin-inline: auto;
+    padding-inline: 1.3rem;
+
+    @variant md {
+        padding-inline: 1.9rem;
+    }
+}
+/*
+* {
+  scrollbar-width: none;
+}
+  */
+
+.swiper-slide-active .swiper-slide__body {
+    @apply lg:bg-[linear-gradient(158deg,#fff_0%,#9eb1d9_100%)] lg:text-black;
+}
+.fancybox__slide .swiper-slide__body {
+    @apply h-[78vh] w-184 max-w-full;
+}
+.fancybox__slide .swiper-slide__text {
+    @apply line-clamp-none overflow-auto;
+}
+
+.swiper-slide__text {
+    scroll-behavior: smooth;
+}
+@media (max-width: 932px) and (orientation: landscape) {
+    .container {
+        max-width: 100%;
+    }
+}
+@media (width > 600px) and (width < 768px) {
+    .container {
+        max-width: 100%;
+    }
+}
+
+.scene-24,
+#boy-w-pack-foot {
+    /* Принудительный вынос на GPU */
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+
+    /* Подсказка браузеру */
+    will-change: opacity;
+
+    /* Устранение артефактов отрисовки */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+
+    /* Сглаживание */
+    -webkit-perspective: 1000;
+    perspective: 1000;
+}
+
+.dorm-text > :where(p, h2, ul) {
+    @apply text-sm leading-[1.09] font-light md:text-base xl:text-[1.44rem];
+}
+.dorm-text > :where(p:not(:last-child), h2, ul) {
+    @apply mb-4 xl:mb-8;
+}
+.dorm-text > h2 {
+    @apply font-bold uppercase;
+}
+.dorm-text > ul {
+  @apply list-disc pl-10 space-y-2;
+}
+.pagi__item {
+  @apply aspect-square w-[2.18rem] grid place-content-center rounded-full md:w-[2.43rem] xl:w-13;
+}
+.pagi__item:hover,
+.pagi__item.active {
+  @apply bg-[linear-gradient(152deg,#fff_0%,#9eb1d9_100%)]
+} 
