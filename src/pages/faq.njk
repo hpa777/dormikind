@@ -1,0 +1,46 @@
+{% extends 'layouts/page.njk' %} {% block content %}
+<div class="container">
+    <div class="md:px-[7.4rem] xl:px-[31.7rem]">{% include 'components/search.njk' %}</div>
+    <div class="mt-[1.3rem] md:mt-12">
+        {% for f in faqs %}
+
+        <h2 class="faq__topic bg-my-violet cursor-pointer rounded-[1.25rem] px-3.5 py-2 leading-[1.1] font-extrabold uppercase md:px-5 md:py-3.5 md:text-xl md:leading-[1.1] xl:text-[2.19rem] xl:rounded-[2.63rem] xl:py-[1.9rem] xl:px-[2.6rem]">{{ f.topic }}</h2>
+        <dl class="faq__body h-0 overflow-hidden">
+
+            {% for item in f.faq %}
+            <div class="border-b border-white pb-2.5 md:pb-[1.6rem] xl:pb-[1.9rem]">
+                <dt class="faq__question mt-3.5 flex cursor-pointer items-center gap-x-2 text-sm leading-[1.2] font-bold uppercase md:text-[0.94rem] md:px-5 md:mt-[1.6rem] xl:text-[1.44rem] xl:px-[2.6rem] xl:mt-[1.9rem]">
+                    <span>{{ item.question }}</span>
+                    <div class="faq__question__icon shrink-0 ml-auto">
+                        <svg width="24" height="13" viewBox="0 0 24 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1L11.4 11L22.2898 1" stroke="white" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                </dt>
+                <dd class="faq__answer h-0 overflow-hidden md:px-5 xl:px-[2.6rem]">{{ item.answer | safe }}</dd>
+            </div>
+            {% endfor %}
+
+        </dl>
+
+        {% endfor %}
+    </div>
+</div>
+<script>
+    function expand(className) {
+        const elements = document.querySelectorAll(className)
+        elements.forEach((el) => {
+            el.addEventListener('click', function () {
+                elements.forEach((i) => {
+                    if (i != this) {
+                        i.classList.remove('active')
+                    }
+                })
+                this.classList.toggle('active')
+            })
+        })
+    }
+    expand('.faq__topic')
+    expand('.faq__question')
+</script>
+{% endblock %}

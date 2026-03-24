@@ -10,6 +10,7 @@ export default {
             root: './src',
         }),
         tailwindcss(),
+        /*
         ViteImageOptimizer({
             // Настройки для конвертации в webp
             webp: {
@@ -19,5 +20,6 @@ export default {
             jpg: { quality: 100 },
             png: { quality: 100 },
         }),
+        */
     ],
 }

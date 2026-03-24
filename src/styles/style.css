@@ -8,6 +8,8 @@
     --color-my-violet: #2c246f;
     --color-my-yellow: #fcc600;
 
+    --background-image-my-gradient: linear-gradient(158deg, #fff 0%, #9eb1d9 100%);
+
     --breakpoint-*: initial;
     --breakpoint-sm: 600px;
     --breakpoint-md: 768px;
@@ -32,7 +34,7 @@
   */
 
 .swiper-slide-active .swiper-slide__body {
-    @apply lg:bg-[linear-gradient(158deg,#fff_0%,#9eb1d9_100%)] lg:text-black;
+    @apply lg:bg-my-gradient lg:text-black;
 }
 .fancybox__slide .swiper-slide__body {
     @apply h-[78vh] w-184 max-w-full;
@@ -73,7 +75,7 @@
     perspective: 1000;
 }
 
-.dorm-text > :where(p, h2, ul) {
+.dorm-text :where(p, h2, ul) {
     @apply text-sm leading-[1.09] font-light md:text-base xl:text-[1.44rem];
 }
 .dorm-text > :where(p:not(:last-child), h2, ul) {
@@ -83,12 +85,37 @@
     @apply font-bold uppercase;
 }
 .dorm-text > ul {
-  @apply list-disc pl-10 space-y-2;
+    @apply list-disc space-y-2 pl-10;
 }
 .pagi__item {
-  @apply aspect-square w-[2.18rem] grid place-content-center rounded-full md:w-[2.43rem] xl:w-13;
+    @apply grid aspect-square w-[2.18rem] place-content-center rounded-full md:w-[2.43rem] xl:w-13;
 }
 .pagi__item:hover,
 .pagi__item.active {
-  @apply bg-[linear-gradient(152deg,#fff_0%,#9eb1d9_100%)]
-} 
+    @apply bg-[linear-gradient(152deg,#fff_0%,#9eb1d9_100%)];
+}
+
+
+.faq__topic.active, .faq__topic:hover {
+    @apply bg-my-gradient text-my-violet;
+}
+
+.faq__answer :where(p, ul) {
+    @apply text-sm leading-[1.2] md:text-[0.94rem] xl:text-[1.44rem];
+}
+.faq__answer :where(p:not(:last-child)) {
+    @apply mb-2.5
+}
+.faq__topic.active + .faq__body,
+.faq__question.active + .faq__answer {
+    @apply h-auto;
+}
+.faq__question.active + .faq__answer {
+    @apply pt-2.5 xl:pt-6;
+}
+.faq__question.active .faq__question__icon {
+    @apply rotate-180;
+}
+.faq__topic:not(:first-child) {
+    @apply mt-3 xl:mt-4;
+}
