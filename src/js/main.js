@@ -147,6 +147,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
             opacity: 0.001,
             duration: 0.5,
         })
+    ScrollTrigger.batch('.fade-in', {
+        onEnter: (batch) =>
+            gsap.to(batch, {
+                opacity: 1,
+                y: 0,
+                stagger: 0.1,
+                delay: 0.5,
+                duration: 1,
+            }),
+    })
 
     gsap.utils.toArray('[data-move]').forEach((elem) => {
         const param = {
@@ -167,13 +177,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 endTrigger: elem.dataset.endtrigger || '',
                 start: elem.dataset.start || 'top bottom',
                 end: elem.dataset.end || 'bottom -30%',
-                scrub: true,
+                scrub: !(elem.dataset.scrub === 'no'),
                 //markers: true,
             }
         }
 
         if (elem.dataset.path) {
-            console.log(JSON.parse(elem.dataset.path))
             param['motionPath'] = {
                 path: JSON.parse(elem.dataset.path),
                 type: 'leftBottom',
@@ -192,55 +201,65 @@ document.addEventListener('DOMContentLoaded', (event) => {
         scrollZoom(scrollZoomElements)
     }
 
-    getFrames('/images/dorm_webp_frames/dormikind_pack_', 326, 2).then((frames) => {
-        setCanvas(
-            'my-canvas',
-            frames,
-            {
-                trigger: '.scene-1',
-                start: 'top top',
+    const animCanvas1 = document.getElementById('my-canvas')
+    if (animCanvas1) {
+        getFrames('/images/dorm_webp_frames/dormikind_pack_', 325, 2).then((frames) => {
+            setCanvas(
+                animCanvas1,
+                frames,
+                {
+                    trigger: '.scene-1',
+                    start: 'top top',
+                    end: '300%',
+                    scrub: true,
+                    //markers: true,
+                },
+                (el) => {
+                    const offset = {
+                        offsetX: 0,
+                        offsetY: 0,
+                    }
+                    //debugger
+                    if (window.innerWidth <= 932 && window.innerHeight < window.innerWidth) {
+                        offset.offsetX = Math.round(window.innerWidth / 10)
+                        offset.offsetY = Math.round(window.innerHeight / 5)
+                        //console.log('landscape')
+                    } else if (window.innerWidth < 376) {
+                        offset.offsetX = 60
+                        offset.offsetY = 30
+                    } else if (window.innerWidth < 768) {
+                        offset.offsetX = 150
+                        offset.offsetY = 80
+                    } else if (window.innerWidth < 1024) {
+                        offset.offsetX = Math.round(window.innerWidth / 1.8)
+                        offset.offsetY = Math.round(window.innerHeight / 5)
+                        //console.log('tablet')
+                    }
+                    //console.log(offset)
+                    return offset
+                }
+            )
+        })
+    }
+
+    const animCanvas2 = document.getElementById('boy-w-pack')
+    const animCanvas3 = document.getElementById('boy-w-pack-foot')
+    if (animCanvas2 && animCanvas3) {
+        getFrames('/images/boy_webp_frames/dormikind_boy_', 149, 4).then((frames) => {
+            setCanvas(animCanvas2, frames, {
+                trigger: '.scene-8',
+                start: 'bottom center',
                 end: '300%',
                 scrub: true,
-                //markers: true,
-            },
-            () => {
-                const offset = {
-                    offsetX: 0,
-                    offsetY: 0,
-                }
-                //debugger
-                if (window.innerWidth <= 932 && window.innerHeight < window.innerWidth) {
-                    offset.offsetX = Math.round(window.innerWidth / 10)
-                    offset.offsetY = Math.round(window.innerHeight / 5)
-                    //console.log('landscape')
-                } else if (window.innerWidth < 768) {
-                    offset.offsetX = Math.round(window.innerWidth / 4.7)
-                    offset.offsetY = 50
-                    //console.log('mobile')
-                } else if (window.innerWidth < 1024) {
-                    offset.offsetX = Math.round(window.innerWidth / 1.8)
-                    offset.offsetY = Math.round(window.innerHeight / 5)
-                    //console.log('tablet')
-                }
-                //console.log(offset)
-                return offset
-            }
-        )
-    })
-    getFrames('/images/boy_webp_frames/dormikind_boy_', 149, 4).then((frames) => {
-        setCanvas('boy-w-pack', frames, {
-            trigger: '.scene-8',
-            start: 'bottom center',
-            end: '300%',
-            scrub: true,
+            })
+            setCanvas(animCanvas3, frames, {
+                trigger: '.scene-24',
+                start: 'top -50%',
+                end: '80%',
+                scrub: true,
+            })
         })
-        setCanvas('boy-w-pack-foot', frames, {
-            trigger: '.scene-24',
-            start: 'top -50%',
-            end: '80%',
-            scrub: true,
-        })
-    })
+    }
 
     document.querySelectorAll('.swiper-slide').forEach((elem) => {
         elem.addEventListener('click', function () {
@@ -360,25 +379,24 @@ function resizeCanvasToDisplaySize(canvas) {
 }
 
 function render(canvas, img, offsetFunction) {
-    resizeCanvasToDisplaySize(canvas)
+    //resizeCanvasToDisplaySize(canvas)
     const context = canvas.getContext('2d')
     context.clearRect(0, 0, canvas.width, canvas.height)
-
     let offsetX = 0,
         offsetY = 0
     if (offsetFunction) {
-        ;({ offsetX, offsetY } = offsetFunction())
+        ;({ offsetX, offsetY } = offsetFunction(canvas))
     }
-
     context.drawImage(img, offsetX, offsetY, canvas.width, canvas.height)
 }
 
-async function setCanvas(canvasId, images, scrollTrigger, offsetFunction) {
-    const canvas = document.getElementById(canvasId)
+async function setCanvas(canvas, images, scrollTrigger, offsetFunction) {
     const counter = { frame: 0 }
+    let prevIdx = -1
     const setImg = () => {
-        if (images[counter.frame] !== undefined) {
+        if (counter.frame !== prevIdx && images[counter.frame] !== undefined) {
             render(canvas, images[counter.frame], offsetFunction)
+            prevIdx = counter.frame
         }
     }
 
@@ -389,8 +407,14 @@ async function setCanvas(canvasId, images, scrollTrigger, offsetFunction) {
         scrollTrigger: scrollTrigger,
         onUpdate: setImg,
     })
-    window.addEventListener('resize', setImg)
-    render(canvas, images[0], offsetFunction)
+    window.addEventListener('resize', () => {
+        resizeCanvasToDisplaySize(canvas)
+        prevIdx = -1
+        setImg()
+    })
+    resizeCanvasToDisplaySize(canvas)
+    setImg()
+    //render(canvas, images[0], offsetFunction)
     gsap.to(canvas, {
         opacity: 1,
         duration: 1,
