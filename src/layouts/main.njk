@@ -1,77 +1,11 @@
 <!doctype html>
-<html lang="ru" classs="mls:text-base text-[4.8vw] sm:text-[3.9vw] md:text-base xl:text-[1.5vh]">
-    {% include '../components/head.njk' %}
+<html lang="ru" class="mls:text-base ret:text-base text-[4.8vw] sm:text-[3.9vw] md:text-base xl:text-[1.5vh]">
+    {% include 'components/head.njk' %}
     <body class="font-nunito font-normal text-white">
-        <svg class="hidden">
-            <symbol id="main-logo" viewBox="0 0 209 30">
-                <path
-                    d="M1.63459 20.4493C3.35998 18.4493 3.92755 15.7976 3.92755 10.4043V0.246948H19.8194V20.4718H21.7945V30H17.8669V24.4269H3.92755V30H0V20.4718H1.63459V20.4493ZM8.05942 4.20203V10.4043C8.05942 15.3032 7.62807 18.4943 6.0843 20.4943H15.5967V4.20203H8.05942Z"
-                    fill="currentColor" />
-                <path
-                    d="M33.645 0C41.046 0 43.0665 2.58429 43.0665 11.8428C43.0665 22.5844 41.0233 24.7193 33.645 24.7193C25.7218 24.7193 24.2461 22.562 24.2461 11.8428C24.2461 2.58429 26.1758 0 33.645 0ZM33.645 20.7867C38.0493 20.7867 38.7758 19.8204 38.7758 12.3596C38.7758 4.89891 37.8903 3.93261 33.645 3.93261C29.3996 3.93261 28.5369 4.53936 28.5369 12.3596C28.5369 20.1799 29.2407 20.7867 33.645 20.7867Z"
-                    fill="currentColor" />
-                <path
-                    d="M50.7852 24.4269H46.5625V0.246948H55.916C61.2965 0.246948 64.1343 1.5728 64.1343 8.17959C64.1343 14.7864 62.0911 16.4718 56.3019 16.4718H50.7852V24.4044V24.4269ZM50.7852 12.5392H55.8933C58.7765 12.5392 59.8435 11.7976 59.8435 8.60656C59.8435 5.12339 58.7538 4.17956 55.8933 4.17956H50.7852V12.5392Z"
-                    fill="currentColor" />
-                <path d="M74.374 0.246948L80.3221 18.1797H80.4356L86.2701 0.246948H93.4669V24.4044H89.2442V4.0672L82.3199 24.4269H78.5286L71.627 4.20203V24.4269H67.4043V0.246948H74.3513H74.374Z" fill="currentColor" />
-                <path
-                    d="M116.579 0.246948V24.4044H112.356V8.4942C112.356 7.75262 112.379 5.97733 112.674 4.22451H112.651L103.388 24.4269H97.3496V0.246948H101.572V16.1122C101.572 16.8538 101.55 18.6516 101.254 20.4044H101.323L110.54 0.246948H116.579Z"
-                    fill="currentColor" />
-                <path d="M124.636 10.2695H126.475L133.944 0.246948H139.098L130.198 12.0223L140.028 24.4044H134.693L126.588 14.0897H124.613V24.4044H120.391V0.246948H124.613V10.247L124.636 10.2695Z" fill="currentColor" />
-                <path
-                    d="M161.936 0.246948V24.4044H157.713V8.4942C157.713 7.75262 157.736 5.97733 158.031 4.22451H158.009L148.746 24.4269H142.707V0.246948H146.93V16.1122C146.93 16.8538 146.907 18.6516 146.612 20.4044H146.68L155.875 0.246948H161.913H161.936Z"
-                    fill="currentColor" />
-                <path d="M169.998 10.2695H180.237V0.246948H184.46V24.4044H180.237V14.0897H169.998V24.4044H165.775V0.246948H169.998V10.247V10.2695Z" fill="currentColor" />
-                <path
-                    d="M188.84 20.4493C190.565 18.4493 191.133 15.7976 191.133 10.4043V0.246948H207.024V20.4718H209V30H205.072V24.4269H191.133V30H187.205V20.4718H188.84V20.4493ZM195.287 4.20203V10.4043C195.287 15.3032 194.856 18.4943 193.312 20.4943H202.824V4.20203H195.287Z"
-                    fill="currentColor" />
-            </symbol>
-        </svg>
         <!-- Header-->
         <header class="fixed top-0 left-0 z-53 w-full">
-            <div class="mls:pt-6 mls:flex-row container flex items-center justify-between pt-5 md:flex-row-reverse md:pt-11 xl:hidden">
-                <a href="#" class="text-my-blue mls:hidden hidden h-[2.2rem] w-32 place-content-center rounded-full bg-white text-sm md:grid">Где купить</a>
-                <a href="#" class="mls:ml-0 block w-[7.4rem] md:mx-auto md:w-40">
-                    <svg width="209" height="30">
-                        <use href="#main-logo"></use>
-                    </svg>
-                </a>
-                <button id="mob-menu" class="peer w-[1.8rem] md:w-10" onclick="this.classList.add('active')">
-                    <svg width="40" height="35" viewBox="0 0 40 35" fill="none" xmlns="http://www.w3.org/2000/svg" class="max-w-full">
-                        <rect width="40" height="3.82175" fill="white" />
-                        <rect y="15.5894" width="40" height="3.82175" fill="white" />
-                        <rect y="31.1782" width="40" height="3.82175" fill="white" />
-                    </svg>
-                </button>
-                <nav class="mls:text-left text-my-violet fixed inset-0 z-54 container hidden bg-white py-8 peer-[.active]:block md:bottom-auto md:text-center xl:hidden!">
-                    <div class="border-my-violet/30 mb-10 border-b pb-5">
-                        <svg width="209" height="30" class="inline-block w-40">
-                            <use href="#main-logo"></use>
-                        </svg>
-                    </div>
-                    <ul class="mls:grid-cols-2 grid gap-y-8 text-xl">
-                        <li class="mls:pl-16"><a href="">Особенности сна</a></li>
-                        <li class="mls:pl-16"><a href="">О Дормикинде</a></li>
-                        <li class="mls:pl-16"><a href="">Специалистам</a></li>
-                        <li class="mls:pl-16"><a href="">Родителям</a></li>
-                        <li class="mls:pl-16"><a href="">Где купить</a></li>
-                    </ul>
-                    <button class="absolute top-8 right-7 text-[4rem] leading-[0.5]" onclick="document.getElementById('mob-menu').classList.remove('active')">&times;</button>
-                </nav>
-            </div>
-            <div class="relative container hidden items-center gap-x-[3.8rem] pt-[3.3rem] text-2xl xl:flex">
-                <div class="absolute inset-0 -z-10 grid grow place-content-center pt-14">
-                    <svg width="209" height="30">
-                        <use href="#main-logo"></use>
-                    </svg>
-                </div>
-                <a class="decoration-my-yellow underline-offset-9 hover:underline" href="">Особенности сна</a>
-                <a class="decoration-my-yellow mr-auto underline-offset-9 hover:underline" href="">О Дормикинде</a>
-
-                <a class="decoration-my-yellow underline-offset-9 hover:underline" href="">Специалистам</a>
-                <a class="decoration-my-yellow underline-offset-9 hover:underline" href="">Родителям</a>
-                <a href="#" class="text-my-blue grid h-[2.44rem] w-[9.2rem] place-content-center rounded-full border border-white bg-white transition-colors hover:bg-transparent hover:text-white">Где купить</a>
-            </div>
+            <div class="mls:pt-6 mls:flex-row container flex items-center justify-between pt-5 md:flex-row-reverse md:pt-11 xl:hidden">{% include 'components/header_mob.njk' %}</div>
+            <div>{% include 'components/main_menu.njk' %}</div>
         </header>
 
         <!-- /Header-->
@@ -92,27 +26,101 @@
                         data-start="center top"
                         data-opacity="1"></div>
                     <!--/Gradient bg-->
-                    <!--Clouds-->
-                    <div class="mls:max-h-[70%] mls:-right-40 absolute right-0 bottom-0 w-full lg:w-auto">
+                    <!--Clouds Back-->
+                    <div class="mls:hidden absolute right-0 bottom-0 w-full">
                         <picture>
-                            <source srcset="/images/cloud-back-lg.png" media="(min-width: 1024px)" />
-                            <source srcset="/images/cloud-back-md.png" media="(min-width: 768px)" />
-                            <img src="/images/cloud-back.png" class="w-full lg:w-auto" alt="" data-move="to" data-y="350" data-start="center top" data-end="+=300%" />
+                            <source srcset="/images/cloud-back-lg.png" media="(min-width: 1280px)" />
+                            <source srcset="/images/cloud-back-md.png" media="(min-width: 667px)" />
+                            <img src="/images/cloud-back.png" class="ml-auto w-full md:w-auto" alt="" data-move="to" data-y="350" data-start="center top" data-end="+=300%" />
                         </picture>
                     </div>
-                    <!--/Clouds-->
+                    <!--/Clouds Back-->
                     <!--Pack-->
-                    <canvas id="my-canvas" class="mls:h-full absolute right-0 bottom-0 aspect-video h-[80%] opacity-0 md:h-[95%] xl:-bottom-20"></canvas>
+                    <div data-move="to" data-scale="0.9" data-opacity="0" data-trigger=".scene-2" data-start="bottom top">
+                        <canvas id="my-canvas" style="backface-visibility:hidden;transform:translateZ(0)"
+                            class="mls:h-screen absolute right-0 bottom-0 aspect-[2] h-[80vh] opacity-0 md:h-[95vh] lg:-right-12 lg:-bottom-4 xl:bottom-0 xl:h-screen"></canvas>
+                    </div>
                     <!--/Pack-->
-                    <!--Clouds2-->
-                    <div class="mls:max-h-[70%] mls:-right-40 absolute right-0 -bottom-4 w-full md:-bottom-40 xl:bottom-0 xl:w-auto">
+                    <!--Clouds Front-->
+                    <div class="absolute right-0 bottom-0 w-full">
                         <picture>
-                            <source srcset="/images/cloud-front-lg.png" media="(min-width: 1024px)" />
-                            <source srcset="/images/cloud-front-md.png" media="(min-width: 768px)" />
-                            <img src="/images/cloud-front.png" class="w-full lg:w-auto" alt="" data-move="to" data-y="350" data-start="center top" data-end="+=300%" />
+                            <source srcset="/images/cloud-front-lg.png" media="(min-width: 1280px)" />
+                            <source media="((max-width: 932px) and (max-height:430px) and (orientation: landscape))" srcset="/images/cloud-front-mls.png" />
+                            <source srcset="/images/cloud-back-md.png" media="(min-width: 667px)" />
+                            <img src="/images/cloud-front.png" class="mls:h-auto h-24 ml-auto w-full md:h-56 xl:h-80" alt="" data-move="to" data-y="350" data-start="center top" data-end="+=300%" />
                         </picture>
                     </div>
-                    <!--/Clouds2-->
+                    <!--/Clouds Front-->
+                    <!--Stars-->
+                    <div class="absolute inset-0 grid grid-cols-16 grid-rows-40">
+                        <div scroll-zoom class="col-start-9 row-start-8 grid place-content-center md:col-start-6 md:row-start-10 xl:col-start-10 xl:row-start-5">
+                            <img
+                                data-move="to"
+                                data-opacity="1"
+                                data-y="-150vh"
+                                data-rotate="48"
+                                data-trigger=".scrubMarker1"
+                                data-start="top top"
+                                data-end="bottom -250%"
+                                class="w-26 max-w-none -rotate-10 md:w-56 xl:w-86"
+                                src="/images/star-f-1.png"
+                                alt="" />
+                        </div>
+                        <div scroll-zoom class="col-start-14 row-start-11 grid place-content-center md:col-start-16 md:row-start-7 xl:col-start-16 xl:row-start-1">
+                            <img
+                                data-move="to"
+                                data-opacity="1"
+                                data-y="-150vh"
+                                data-rotate="48"
+                                data-trigger=".scrubMarker1"
+                                data-start="top top"
+                                data-end="bottom -250%"
+                                class="w-44 max-w-none -rotate-10 blur-[2px] md:ml-16 md:w-70 xl:w-102"
+                                src="/images/star-f-1.png"
+                                alt="" />
+                        </div>
+                        <div scroll-zoom class="col-start-6 row-start-18 grid place-content-center md:col-start-9 md:row-start-9 xl:col-start-8 xl:row-start-10 xl:mr-20">
+                            <img
+                                data-move="to"
+                                data-opacity="1"
+                                data-y="-150vh"
+                                data-rotate="48"
+                                data-trigger=".scrubMarker1"
+                                data-start="top top"
+                                data-end="bottom -250%"
+                                class="w-37 max-w-none -rotate-10 md:ml-8 md:w-39 xl:w-85"
+                                src="/images/star-f-1.png"
+                                alt="" />
+                        </div>
+                        <div scroll-zoom class="col-start-16 row-start-19 grid place-content-center md:col-start-14 md:row-start-13 xl:col-start-15 xl:row-start-12 xl:mr-28">
+                            <img
+                                data-move="to"
+                                data-opacity="1"
+                                data-y="-150vh"
+                                data-rotate="48"
+                                data-trigger=".scrubMarker1"
+                                data-start="top top"
+                                data-end="bottom -250%"
+                                class="w-37 max-w-none -rotate-10 blur-sm md:w-57 xl:w-85"
+                                src="/images/star-f-1.png"
+                                alt="" />
+                        </div>
+                        <div scroll-zoom class="col-start-5 row-start-33 grid place-content-center md:col-start-9 md:row-start-24 xl:col-start-10 xl:row-start-31">
+                            <img
+                                data-move="to"
+                                data-opacity="1"
+                                data-y="-150vh"
+                                data-rotate="48"
+                                data-trigger=".scrubMarker1"
+                                data-start="top top"
+                                data-end="bottom -250%"
+                                class="w-55 max-w-none -rotate-10 blur-sm md:w-84 xl:w-127"
+                                src="/images/star-f-1.png"
+                                alt="" />
+                        </div>
+                    </div>
+                    <!--/Stars-->
+                    <!--Scene 1 text-->
                     <div class="absolute inset-0" data-trigger=".scene-2" data-endtrigger=".scrubMarker1" data-start="top center" data-move="to">
                         <div
                             data-move="to"
@@ -132,12 +140,15 @@
                                                 fill="currentColor" />
                                         </svg>
                                     </span>
-                                    <span class="grid h-full place-content-center rounded-full border border-white bg-white px-3.5 transition-colors group-hover:bg-transparent md:px-7 xl:px-[2.4rem]">Купить сейчас</span>
+                                    <span class="grid h-full place-content-center rounded-full border border-white bg-white px-3.5 whitespace-nowrap transition-colors group-hover:bg-transparent md:px-7 xl:px-[2.4rem]"
+                                        >Купить сейчас</span
+                                    >
                                 </a>
                                 <a href="" class="hover:text-my-violet ml-4 grid h-full place-content-center rounded-full border border-white px-3.5 transition-colors hover:bg-white md:px-7 xl:px-[2.4rem]">Инструкция</a>
                             </div>
                         </div>
                     </div>
+                    <!--/Scene 1 text-->
                 </div>
             </div>
             <!--/Boy-->
@@ -299,7 +310,7 @@
             <div class="scene-10 sticky top-0 h-[300vh]">
                 <div class="sticky top-0 h-screen">
                     <div class="mls:top-1/2 card absolute top-[38%] left-1/2 aspect-square w-[425%] -translate-x-1/2 md:top-[30%] xl:top-1/2 xl:w-[300%]">
-                        <div class="absolute left-1/2 min-h-60 w-56 -translate-1/2 rounded-2xl bg-my-gradient p-3.5 lg:w-80 xl:min-h-128 xl:w-100 xl:rounded-[2.6rem] xl:p-12">
+                        <div class="bg-my-gradient absolute left-1/2 min-h-60 w-56 -translate-1/2 rounded-2xl p-3.5 lg:w-80 xl:min-h-128 xl:w-100 xl:rounded-[2.6rem] xl:p-12">
                             <h3 class="text-my-violet mb-4 text-sm font-extrabold uppercase md:text-base xl:text-2xl">Дормикинд сопоставимо эффективен у детей</h3>
                             <ul class="list-disc space-y-0.5 pl-5 text-sm leading-none font-light text-black md:text-base lg:leading-[1.2] xl:space-y-4 xl:text-[1.44rem]">
                                 <li>до 1 года</li>
@@ -320,7 +331,7 @@
                         </div>
                     </div>
                     <div class="mls:top-1/2 card absolute top-[38%] left-1/2 aspect-square w-[425%] -translate-x-1/2 md:top-[30%] xl:top-1/2 xl:w-[300%]">
-                        <div class="absolute left-1/2 min-h-60 w-56 -translate-1/2 rounded-2xl bg-my-gradient p-3.5 lg:w-80 xl:min-h-128 xl:w-100 xl:rounded-[2.6rem] xl:p-6">
+                        <div class="bg-my-gradient absolute left-1/2 min-h-60 w-56 -translate-1/2 rounded-2xl p-3.5 lg:w-80 xl:min-h-128 xl:w-100 xl:rounded-[2.6rem] xl:p-6">
                             <h3 class="text-my-violet mb-4 text-sm font-extrabold uppercase md:text-base xl:text-2xl">при нарушениях сна, которые могут проявляться как: </h3>
                             <ul class="list-disc space-y-0.5 pl-5 text-sm leading-none font-light text-black md:text-base xl:space-y-1 xl:text-[1.44rem] xl:leading-[1.2]">
                                 <li>Беспокойный сон</li>
@@ -500,9 +511,7 @@
                         </ol>
                     </div>
 
-                    <div id="footer" class="opacity-0" data-move="to" data-opacity="1" data-start="top bottom" data-end="bottom bottom">
-                        {% include '../components/footer.njk' %}
-                    </div>
+                    <div id="footer" class="opacity-0" data-move="to" data-opacity="1" data-start="top bottom" data-end="bottom bottom">{% include 'components/footer.njk' %}</div>
                 </div>
             </div>
             <!--/Footer-->
