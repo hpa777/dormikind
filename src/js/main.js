@@ -167,6 +167,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             opacity: elem.dataset.opacity || 0,
             //duration: elem.dataset.duration || '',
             delay: elem.dataset.delay || 0,
+            ease: 'none',
         }
         if (elem.dataset.duration) {
             param['duration'] = elem.dataset.duration
@@ -203,7 +204,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     const animCanvas1 = document.getElementById('my-canvas')
     if (animCanvas1) {
-        getFrames('/images/dorm_webp_frames/dormikind_pack_', 325, 2).then((frames) => {
+        getFrames('/images/dorm_webp_frames/dormikind_pack_', 325, 4).then((frames) => {
             setCanvas(
                 animCanvas1,
                 frames,
@@ -407,11 +408,13 @@ async function setCanvas(canvas, images, scrollTrigger, offsetFunction) {
         scrollTrigger: scrollTrigger,
         onUpdate: setImg,
     })
+    /*
     window.addEventListener('resize', () => {
         resizeCanvasToDisplaySize(canvas)
         prevIdx = -1
         setImg()
     })
+        */
     resizeCanvasToDisplaySize(canvas)
     setImg()
     //render(canvas, images[0], offsetFunction)

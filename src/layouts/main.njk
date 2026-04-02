@@ -1,12 +1,10 @@
 <!doctype html>
 <html lang="ru" class="mls:text-base ret:text-base text-[4.8vw] sm:text-[3.9vw] md:text-base xl:text-[1.5vh]">
     {% include 'components/head.njk' %}
-    <body class="font-nunito font-normal text-white">        
+    <body class="font-nunito font-normal text-white">
         <!-- Header-->
         <header class="fixed top-0 left-0 z-53 w-full">
-            <div class="mls:pt-6 mls:flex-row container flex items-center justify-between pt-5 md:flex-row-reverse md:pt-11 xl:hidden">
-                {% include 'components/header_mob.njk' %}
-            </div>
+            <div class="mls:pt-6 mls:flex-row container flex items-center justify-between pt-5 md:flex-row-reverse md:pt-11 xl:hidden">{% include 'components/header_mob.njk' %}</div>
             <div>{% include 'components/main_menu.njk' %}</div>
         </header>
 
@@ -28,7 +26,7 @@
                         data-start="center top"
                         data-opacity="1"></div>
                     <!--/Gradient bg-->
-                    <!--Clouds-->
+                    <!--Clouds Back-->
                     <div class="mls:hidden absolute right-0 bottom-0 w-full">
                         <picture>
                             <source srcset="/images/cloud-back-lg.png" media="(min-width: 1280px)" />
@@ -36,21 +34,93 @@
                             <img src="/images/cloud-back.png" class="ml-auto w-full md:w-auto" alt="" data-move="to" data-y="350" data-start="center top" data-end="+=300%" />
                         </picture>
                     </div>
-                    <!--/Clouds-->
+                    <!--/Clouds Back-->
                     <!--Pack-->
-                    <canvas id="my-canvas" class="mls:h-screen absolute right-0 bottom-0 aspect-video h-[80%] opacity-0 md:h-[95%] lg:-right-12 lg:-bottom-4 xl:-bottom-20 xl:h-screen"></canvas>
+                    <div data-move="to" data-scale="0.9" data-opacity="0" data-trigger=".scene-2" data-start="bottom top">
+                        <canvas id="my-canvas" style="backface-visibility:hidden;transform:translateZ(0)"
+                            class="mls:h-screen absolute right-0 bottom-0 aspect-[2] h-[80vh] opacity-0 md:h-[95vh] lg:-right-12 lg:-bottom-4 xl:bottom-0 xl:h-screen"></canvas>
+                    </div>
                     <!--/Pack-->
-                    <!--Clouds2-->
-                    <div class="absolute right-0 -bottom-4 w-full">
+                    <!--Clouds Front-->
+                    <div class="absolute right-0 bottom-0 w-full">
                         <picture>
                             <source srcset="/images/cloud-front-lg.png" media="(min-width: 1280px)" />
                             <source media="((max-width: 932px) and (max-height:430px) and (orientation: landscape))" srcset="/images/cloud-front-mls.png" />
                             <source srcset="/images/cloud-back-md.png" media="(min-width: 667px)" />
-                            <img src="/images/cloud-front.png" class="ml-auto w-full md:w-auto" alt="" data-move="to" data-y="350" data-start="center top" data-end="+=300%" />
+                            <img src="/images/cloud-front.png" class="mls:h-auto h-24 ml-auto w-full md:h-56 xl:h-80" alt="" data-move="to" data-y="350" data-start="center top" data-end="+=300%" />
                         </picture>
                     </div>
-
-                    <!--/Clouds2-->
+                    <!--/Clouds Front-->
+                    <!--Stars-->
+                    <div class="absolute inset-0 grid grid-cols-16 grid-rows-40">
+                        <div scroll-zoom class="col-start-9 row-start-8 grid place-content-center md:col-start-6 md:row-start-10 xl:col-start-10 xl:row-start-5">
+                            <img
+                                data-move="to"
+                                data-opacity="1"
+                                data-y="-150vh"
+                                data-rotate="48"
+                                data-trigger=".scrubMarker1"
+                                data-start="top top"
+                                data-end="bottom -250%"
+                                class="w-26 max-w-none -rotate-10 md:w-56 xl:w-86"
+                                src="/images/star-f-1.png"
+                                alt="" />
+                        </div>
+                        <div scroll-zoom class="col-start-14 row-start-11 grid place-content-center md:col-start-16 md:row-start-7 xl:col-start-16 xl:row-start-1">
+                            <img
+                                data-move="to"
+                                data-opacity="1"
+                                data-y="-150vh"
+                                data-rotate="48"
+                                data-trigger=".scrubMarker1"
+                                data-start="top top"
+                                data-end="bottom -250%"
+                                class="w-44 max-w-none -rotate-10 blur-[2px] md:ml-16 md:w-70 xl:w-102"
+                                src="/images/star-f-1.png"
+                                alt="" />
+                        </div>
+                        <div scroll-zoom class="col-start-6 row-start-18 grid place-content-center md:col-start-9 md:row-start-9 xl:col-start-8 xl:row-start-10 xl:mr-20">
+                            <img
+                                data-move="to"
+                                data-opacity="1"
+                                data-y="-150vh"
+                                data-rotate="48"
+                                data-trigger=".scrubMarker1"
+                                data-start="top top"
+                                data-end="bottom -250%"
+                                class="w-37 max-w-none -rotate-10 md:ml-8 md:w-39 xl:w-85"
+                                src="/images/star-f-1.png"
+                                alt="" />
+                        </div>
+                        <div scroll-zoom class="col-start-16 row-start-19 grid place-content-center md:col-start-14 md:row-start-13 xl:col-start-15 xl:row-start-12 xl:mr-28">
+                            <img
+                                data-move="to"
+                                data-opacity="1"
+                                data-y="-150vh"
+                                data-rotate="48"
+                                data-trigger=".scrubMarker1"
+                                data-start="top top"
+                                data-end="bottom -250%"
+                                class="w-37 max-w-none -rotate-10 blur-sm md:w-57 xl:w-85"
+                                src="/images/star-f-1.png"
+                                alt="" />
+                        </div>
+                        <div scroll-zoom class="col-start-5 row-start-33 grid place-content-center md:col-start-9 md:row-start-24 xl:col-start-10 xl:row-start-31">
+                            <img
+                                data-move="to"
+                                data-opacity="1"
+                                data-y="-150vh"
+                                data-rotate="48"
+                                data-trigger=".scrubMarker1"
+                                data-start="top top"
+                                data-end="bottom -250%"
+                                class="w-55 max-w-none -rotate-10 blur-sm md:w-84 xl:w-127"
+                                src="/images/star-f-1.png"
+                                alt="" />
+                        </div>
+                    </div>
+                    <!--/Stars-->
+                    <!--Scene 1 text-->
                     <div class="absolute inset-0" data-trigger=".scene-2" data-endtrigger=".scrubMarker1" data-start="top center" data-move="to">
                         <div
                             data-move="to"
@@ -70,12 +140,15 @@
                                                 fill="currentColor" />
                                         </svg>
                                     </span>
-                                    <span class="grid h-full place-content-center rounded-full border border-white bg-white px-3.5 transition-colors group-hover:bg-transparent md:px-7 xl:px-[2.4rem]">Купить сейчас</span>
+                                    <span class="grid h-full place-content-center rounded-full border border-white bg-white px-3.5 whitespace-nowrap transition-colors group-hover:bg-transparent md:px-7 xl:px-[2.4rem]"
+                                        >Купить сейчас</span
+                                    >
                                 </a>
                                 <a href="" class="hover:text-my-violet ml-4 grid h-full place-content-center rounded-full border border-white px-3.5 transition-colors hover:bg-white md:px-7 xl:px-[2.4rem]">Инструкция</a>
                             </div>
                         </div>
                     </div>
+                    <!--/Scene 1 text-->
                 </div>
             </div>
             <!--/Boy-->
