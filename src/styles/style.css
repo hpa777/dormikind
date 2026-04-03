@@ -9,6 +9,7 @@
     --color-my-yellow: #fcc600;
 
     --background-image-my-gradient: linear-gradient(158deg, #fff 0%, #9eb1d9 100%);
+    --background-image-my-table: linear-gradient(198deg, #fff 0%, #9eb1d9 100%);
 
     --breakpoint-*: initial;
     --breakpoint-sm: 600px;

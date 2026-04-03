@@ -1,0 +1,11 @@
+{% for item in cards %}
+<a href="#" class="fade-in group overflow-hidden rounded-[1.25rem] bg-[#9eb1d9] transition-colors hover:bg-transparent xl:rounded-[2.7rem]">
+    <div class="aspect-[1.98] overflow-hidden xl:aspect-[2.2]">
+        <img class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110" src="{{ item.image}}" alt="" />
+    </div>
+    <div
+        class="text-my-violet line-clamp-3 h-[5.4rem] rounded-b-[1.25rem] border-2 border-t-0 border-[#9eb1d9] p-4 text-[0.94rem] leading-[1.1] font-bold uppercase transition-colors group-hover:border-white group-hover:text-white md:p-[1.6rem] xl:line-clamp-2 xl:h-36 xl:rounded-b-[2.7rem] xl:text-[1.44rem]">
+        {{ item.name }}
+    </div>
+</a>
+{% endfor %}

@@ -1,0 +1,108 @@
+{% extends 'layouts/page.njk' %} {% block content %}
+<div class="container">
+    <p class="fade-in mb-5 text-xs xl:text-base">21.07.2020</p>
+    <div class="mb-7 flex flex-col-reverse gap-y-7 md:block">
+        <div class="fade-in aspect-[1.6] overflow-hidden rounded-[1.25rem] md:float-right md:ml-8 md:w-70 xl:w-150 xl:rounded-[2.63rem]">
+            <img class="h-full w-full object-cover" src="/images/article-img-1.png" alt="" />
+        </div>
+        <div class="dorm-text">
+            <p class="fade-in">Нарушения сна часто ведут к серьезным проблемам со здоровьем у малышей. Справиться с ситуацией поможет мягкое и безопасное снотворное для детей.</p>
+            <h2 class="fade-in">Нарушения сна у малышей 1-5 года жизни</h2>
+            <p class="fade-in">
+                Для успешного лечения очень важно не затягивать с визитом к врачу. Затянувшаяся бессонница губительна для нервной системы не только грудного ребенка, но и школьника. В будущем возможно снижение способности
+                к обучению и социальному взаимодействию, нарушения роста и развития.
+            </p>
+            <p class="fade-in">В зависимости от причины и клинических проявлений выделяют:</p>
+            <p class="fade-in">
+                Диссомнии. В эту группу входят нарушения, связанные с индивидуальными особенностями организма (синдром обструктивного апноэ во время сна, нарколепсия, синдром «беспокойных ног»), внешними условиями
+                (несоблюдение гигиены сна, обильная еда на ночь, навязывание ребенку неудобного для него режима).
+            </p>
+        </div>
+    </div>
+    <div class="dorm-text">
+        <p class="fade-in">Также причиной диссомнии могут быть сбои циркадного ритма (отсроченное засыпание).</p>
+        <p class="fade-in">Парасомнии. К ним относятся проблемы с пробуждением (ночные кошмары, снохождение), ритмичные движения ребенка во время сна, сонный паралич.</p>
+        <div class="fade-in mb-7 aspect-[1.6] overflow-hidden rounded-[1.25rem] md:float-left md:mr-8 md:mb-0 md:w-70 xl:w-150 xl:rounded-[2.63rem]">
+            <img class="h-full w-full object-cover" src="/images/article-img-2.png" alt="" />
+        </div>
+        <p class="fade-in">
+            Необходимо отметить, что нарушения проявляются по-разному у детей различного возраста. Мамы малышей 1-5 года жизни жалуются на сложности с засыпанием и частые пробуждения. Нередко встречается задержка дыхания и
+            другие парасомнии. Распространенные проблемы подростков и школьников – нарушения циркадного ритма.
+        </p>
+        <h2 class="fade-in">Какие успокоительные можно давать детям?</h2>
+        <p class="fade-in">
+            Лечение бессонницы у малышей – сложное дело. Перед выбором терапии необходимо полное обследование. Успокоительные препараты для детей подбираются индивидуально, с учетом особенностей психики и состояния
+            здоровья.
+        </p>
+        <p class="fade-in">Иногда для крепкого сна достаточно простых мер: убрать физические и психоэмоциональные нагрузки, не наедаться на ночь, надеть удобную пижаму. При тяжелых расстройствах используется фармакологическое лечение.</p>
+        <h2 class="fade-in">Снотворные препараты для детей</h2>
+    </div>
+    <div class="fade-in bg-my-table grid gap-4 rounded-[1.25rem] px-4 py-7 text-sm leading-[1.09]! font-light text-black md:grid-cols-3 md:text-base xl:gap-9 xl:rounded-[3rem] xl:px-18 xl:py-11 xl:text-[1.44rem]">
+        {% for item in table1 %}
+        <div class="text-my-violet font-bold">{{item.col1 | safe}}</div>
+        <div>{{item.col2 | safe}}</div>
+        <div>{{item.col3 | safe}}</div>
+        <div class="h-0.5 bg-white last:hidden md:col-span-3"></div>
+        {% endfor %}
+    </div>
+    <div class="my-7 flex flex-col-reverse md:block">
+        <div class="fade-in aspect-[1.8] overflow-hidden rounded-[1.25rem] md:float-right md:ml-8 md:w-70 xl:w-150 xl:rounded-[2.63rem]">
+            <img class="h-full w-full object-cover" src="/images/article-img-3.png" alt="" />
+        </div>
+        <div class="dorm-text">
+            <p class="fade-in">Мамы часто спрашивают, можно ли давать снотворное детям? Предварительно нужно посоветоваться с лечащим врачом, так как побочные реакции от приема некоторых препаратов могут быть опасны для малыша.</p>
+            <h2 class="fade-in">Успокоительные средства для детей из растительного сырья</h2>
+            <p class="fade-in">
+                Использование синтетических снотворных при расстройствах сна у малышей ограничено. Причина - недостаток информации о безопасности препаратов и обилие тяжелых побочных реакций. Какое снотворное можно
+                спокойно давать детям? Прекрасная альтернатива синтетическим препаратам - легкие успокоительные на основе растительного сырья. Такие лекарства могут применяться при различных расстройствах сна, безопасны и
+                продаются без рецептов.
+            </p>
+            <h2 class="fade-in">Успокоительные средства для детей от 1 года</h2>
+        </div>
+    </div>
+    <div
+        class="fade-in bg-my-table clear-both grid gap-4 rounded-[1.25rem] px-4 py-7 text-sm leading-[1.09]! font-light text-black md:grid-cols-[7rem_1fr_1fr] md:text-base xl:grid-cols-[20rem_1fr_1fr] xl:gap-9 xl:rounded-[3rem] xl:px-18 xl:py-11 xl:text-[1.44rem]">
+        {% for item in table2 %}
+        <div class="text-my-violet font-bold">{{item.col1 | safe}}</div>
+        <div>{{item.col2 | safe}}</div>
+        <div>{{item.col3 | safe}}</div>
+        <div class="h-0.5 bg-white last:hidden md:col-span-3"></div>
+        {% endfor %}
+    </div>
+    <div class="mt-7 flex flex-col-reverse gap-y-7 md:block">
+        <div class="fade-in aspect-[1.6] overflow-hidden rounded-[1.25rem] md:float-right md:ml-8 md:w-70 xl:float-right xl:w-150 xl:rounded-[2.63rem]">
+            <img class="h-full w-full object-cover" src="/images/article-img-4.png" alt="" />
+        </div>
+        <div class="dorm-text">
+            <p class="fade-in">
+                Нарушения сна – частое явление в детском возрасте. Многочасовое укладывание и частые пробуждения по ночам изнуряют ребенка и родителей, негативно влияют на семейные отношения. Правильно подобранное
+                снотворное поможет устранить патологическое возбуждение нервной системы малыша и вернуть жизнь в нормальное русло. Выспавшийся и отдохнувший ребенок лучше растет и быстрее овладевает новыми навыками.
+            </p>
+            <p class="fade-in">
+                Препараты «первого ряда» в детском возрасте – лекарственные растения и гомеопатические средства. Они безопасны, высокоэффективны и могут применяться при многих расстройствах. В тяжелых случаях не обойтись и
+                без синтетических препаратов. Наиболее подходящее лечение подбирает детский невролог.
+            </p>
+            <div class="fade-in mt-7">
+                <a href="#" class="text-my-violet hover:bg-my-violet grid h-10 w-full place-content-center rounded-full bg-white text-sm transition-colors hover:text-white md:w-36 xl:h-[3.44rem] xl:w-64 xl:text-lg"
+                    >Инструкция</a
+                >
+            </div>
+        </div>
+    </div>
+    <div class="dorm-text mt-7 xl:mt-11">
+        <h2 class="fade-in">Источники:</h2>
+        <ul>
+            <li class="fade-in"><a class="decoration-my-yellow wrap-anywhere hover:underline" href="">https://umedp.ru/articles/farmakoterapiya_narusheniy_sna_u_detey.html</a></li>
+            <li class="fade-in"><a class="decoration-my-yellow wrap-anywhere hover:underline" href="">http://psyandneuro.ru/stati/lechenie-rasstrojstv-sna-u-detej/</a></li>
+            <li class="fade-in"><a class="decoration-my-yellow wrap-anywhere hover:underline" href="">https://medside.ru/dormikind</a></li>
+        </ul>
+    </div>
+    <div class="fade-in mt-9">
+        <a href="#" class="hover:text-my-violet grid h-[2.19rem] w-68 max-w-full place-content-center rounded-full border border-white text-sm transition-colors hover:bg-white md:w-36 xl:h-[3.44rem] xl:w-64 xl:text-lg"
+            >Назад</a
+        >
+    </div>
+    <h2 class="fade-in mt-9 font-extrabold uppercase xl:mt-20 xl:text-4xl">Читайте также</h2>
+    <div class="mt-8 grid gap-6 md:grid-cols-2 xl:gap-x-8 xl:px-68">{% include 'components/cards.njk' %}</div>
+</div>
+{% endblock %}
