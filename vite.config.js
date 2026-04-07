@@ -1,16 +1,21 @@
+import { defineConfig } from 'vite'
 import vituum from 'vituum'
 import nunjucks from '@vituum/vite-plugin-nunjucks'
 import tailwindcss from '@tailwindcss/vite'
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer'
 
-export default {
-    plugins: [
-        vituum(),
-        nunjucks({
-            root: './src',
-        }),
-        tailwindcss(),
-        /*
+export default defineConfig(({ command }) => {
+    return {
+        plugins: [
+            vituum(),
+            nunjucks({
+                root: './src',
+                globals: {
+                    pageClass: command === 'build' ? 'page' : 'page-dev',
+                },
+            }),
+            tailwindcss(),
+            /*
         ViteImageOptimizer({
             // Настройки для конвертации в webp
             webp: {
@@ -21,5 +26,6 @@ export default {
             png: { quality: 100 },
         }),
         */
-    ],
-}
+        ],
+    }
+})

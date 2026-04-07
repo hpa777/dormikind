@@ -1,0 +1,11 @@
+{% extends 'layouts/page.njk' %} {% block content %}
+<div class="container">
+    <div class="mt-4 grid grid-cols-2 gap-6 md:grid-cols-3 md:px-32 xl:flex xl:justify-center xl:px-0">
+        {% for item in buy %}
+        <a href="#" class="fade-in overflow-hidden rounded-lg transition-transform hover:scale-110! xl:w-45">
+            <img class="h-full w-full object-cover" src="{{ item }}" alt="" />
+        </a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

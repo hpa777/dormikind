@@ -1,0 +1,53 @@
+{% extends 'layouts/page.njk' %} {% block content %}
+<div class="container">
+    <div class="flex flex-col items-center md:flex-row md:gap-x-4">
+        <div class="dorm-text">
+            {% for item in descr_top %}
+            <p class="fade-in"><span class="font-bold uppercase">{{ item.title }}</span><br />{{ item.text }}</p>
+            {% endfor %}
+        </div>
+        <div class="fade-in shrink-0 p-7 md:w-[37%] md:p-0">
+            <img class="mx-auto" src="/images/spec_pack.png" alt="" />
+        </div>
+    </div>
+    <div class="extendable group">
+        <div class="dorm-text hidden group-[.active]:block">
+            {% for item in descr_bottom %}
+            <p><span class="font-bold uppercase">{{ item.title }}</span><br />{{ item.text }}</p>
+            {% endfor %}
+        </div>
+        <div class="flex flex-col gap-4 pt-8 md:flex-row">
+            <button
+                onclick="this.closest('.extendable').classList.toggle('active')"
+                class="fade-in extendable__btn text-my-violet hover:bg-my-violet grid h-10 w-full place-content-center rounded-full bg-white text-sm transition-colors hover:text-white md:w-45 xl:h-[3.44rem] xl:w-64 xl:text-lg"></button>
+            <a
+                href="#"
+                class="fade-in hover:text-my-violet grid h-[2.19rem] w-68 max-w-full place-content-center rounded-full border border-white text-sm transition-colors hover:bg-white md:w-45 xl:h-[3.44rem] xl:w-64 xl:text-lg"
+                >Скачать инструкцию</a
+            >
+        </div>
+    </div>
+    <h2 class="fade-in mt-9 font-extrabold uppercase xl:mt-20 xl:text-4xl">Статьи для специалистов</h2>
+    <div class="mt-8 grid gap-6 md:grid-cols-3 xl:gap-x-8">{% include 'components/cards.njk' %}</div>
+</div>
+<div class="spec-shadow fixed inset-0 flex bg-slate-900/50 backdrop-blur-lg">
+    <div class="bg-my-table m-auto w-70 max-w-full rounded-[1.88rem] py-11 text-center md:w-130 xl:w-208 xl:rounded-[2.63rem] xl:pb-20">
+        <p class="text-my-violet text-base/tight md:text-xl/tight xl:text-4xl/tight">
+            Данный раздел предназначен<br /><span class="font-extrabold uppercase">ТОЛЬКО ДЛЯ МЕДИЦИНСКИХ<br />И ФАРМАЦЕВТИЧЕСКИХ РАБОТНИКОВ</span>
+        </p>
+        <p class="mt-1.5 text-sm/tight text-black md:text-base/tight xl:mt-5 xl:text-2xl/tight">Являетесь ли Вы медицинским<br />или фармацевтическим работником?</p>
+        <div class="mt-6 flex justify-center gap-x-3">
+            <button
+                onclick="this.closest('.spec-shadow').classList.add('hidden')"
+                class="text-my-violet hover:bg-my-violet grid h-10 w-30 place-content-center rounded-full bg-white text-sm transition-colors hover:text-white md:w-47 xl:h-14 xl:w-64 xl:text-lg">
+                Да
+            </button>
+            <a
+                href="#"
+                class="hover:text-my-violet grid h-10 w-30 place-content-center rounded-full border border-white text-sm shadow-sm shadow-black/25 transition-colors hover:bg-white md:w-47 xl:h-14 xl:w-64 xl:text-lg"
+                >Нет</a
+            >
+        </div>
+    </div>
+</div>
+{% endblock %}

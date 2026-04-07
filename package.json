@@ -9,15 +9,15 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "@vituum/vite-plugin-nunjucks": "^2",
-    "vituum": "^2",
     "@tailwindcss/vite": "^4.1.18",
+    "@vituum/vite-plugin-nunjucks": "^2",
     "prettier": "^3.8.1",
     "prettier-plugin-tailwindcss": "^0.7.2",
     "sharp": "^0.34.5",
     "svgo": "^4.0.0",
-    "tailwindcss": "^4.1.18",
-    "vite-plugin-image-optimizer": "^2.0.3"
+    "tailwindcss": "^4.1.18",    
+    "vite-plugin-image-optimizer": "^2.0.3",
+    "vituum": "^2"
   },
   "dependencies": {
     "@fancyapps/ui": "^6.1.12",
