@@ -6,7 +6,7 @@
             <p class="fade-in"><span class="font-bold uppercase">{{ item.title }}</span><br />{{ item.text }}</p>
             {% endfor %}
         </div>
-        <div class="fade-in shrink-0 p-7 md:w-[37%] md:p-0">
+        <div class="fade-in mls:max-w-1/2 mls:mx-auto shrink-0 p-7 md:w-[37%] md:p-0">
             <img class="mx-auto" src="/images/spec_pack.png" alt="" />
         </div>
     </div>
@@ -16,22 +16,22 @@
             <p><span class="font-bold uppercase">{{ item.title }}</span><br />{{ item.text }}</p>
             {% endfor %}
         </div>
-        <div class="flex flex-col gap-4 pt-8 md:flex-row">
+        <div class="mls:flex-row mls:justify-center flex flex-col gap-4 pt-8 md:flex-row">
             <button
                 onclick="this.closest('.extendable').classList.toggle('active')"
-                class="fade-in extendable__btn text-my-violet hover:bg-my-violet grid h-10 w-full place-content-center rounded-full bg-white text-sm transition-colors hover:text-white md:w-45 xl:h-[3.44rem] xl:w-64 xl:text-lg"></button>
+                class="fade-in extendable__btn mls:w-45 text-my-violet hover:bg-my-violet grid h-10 w-full place-content-center rounded-full bg-white text-sm transition-colors hover:text-white md:w-45 xl:h-[3.44rem] xl:w-64 xl:text-lg"></button>
             <a
                 href="#"
-                class="fade-in hover:text-my-violet grid h-[2.19rem] w-68 max-w-full place-content-center rounded-full border border-white text-sm transition-colors hover:bg-white md:w-45 xl:h-[3.44rem] xl:w-64 xl:text-lg"
+                class="fade-in mls:w-45 hover:text-my-violet grid h-[2.19rem] w-68 max-w-full place-content-center rounded-full border border-white text-sm transition-colors hover:bg-white md:w-45 xl:h-[3.44rem] xl:w-64 xl:text-lg"
                 >Скачать инструкцию</a
             >
         </div>
     </div>
     <h2 class="fade-in mt-9 font-extrabold uppercase xl:mt-20 xl:text-4xl">Статьи для специалистов</h2>
-    <div class="mt-8 grid gap-6 md:grid-cols-3 xl:gap-x-8">{% include 'components/cards.njk' %}</div>
+    <div class="mls:grid-cols-2 mt-8 grid gap-6 md:grid-cols-3 xl:gap-x-8">{% include 'components/cards.njk' %}</div>
 </div>
-<div class="spec-shadow fixed inset-0 flex bg-slate-900/50 backdrop-blur-lg">
-    <div class="bg-my-table m-auto w-70 max-w-full rounded-[1.88rem] py-11 text-center md:w-130 xl:w-208 xl:rounded-[2.63rem] xl:pb-20">
+<div class="spec-shadow fixed inset-0 flex bg-slate-900/50 backdrop-blur-lg pt-19 xl:pt-0">
+    <div class="mls:py-6 mls:px-12 mls:w-auto bg-my-table m-auto w-70 max-w-full rounded-[1.88rem] py-11 text-center md:w-130 xl:w-208 xl:rounded-[2.63rem] xl:pb-20">
         <p class="text-my-violet text-base/tight md:text-xl/tight xl:text-4xl/tight">
             Данный раздел предназначен<br /><span class="font-extrabold uppercase">ТОЛЬКО ДЛЯ МЕДИЦИНСКИХ<br />И ФАРМАЦЕВТИЧЕСКИХ РАБОТНИКОВ</span>
         </p>

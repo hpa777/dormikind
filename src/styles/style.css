@@ -83,8 +83,9 @@
 }
 @layer components {
     .dorm-text :where(p, h2, ul) {
-        @apply text-sm/my-109 font-light md:text-base/my-109 xl:text-[1.44rem];
+        @apply text-sm/my-109 font-light md:text-base/my-109 xl:text-[1.44rem] text-justify;
     }
+    
     .dorm-text > :where(p:not(:last-child), h2, ul) {
         @apply mb-4 xl:mb-8;
     }
