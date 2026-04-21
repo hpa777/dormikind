@@ -58,37 +58,31 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 })
             })
 
-            if (isDesktop || isMobileLandscape) {
-                gsap.timeline({
+            const boyPack = gsap
+                .timeline({
                     scrollTrigger: {
-                        trigger: '.scene-10',
-                        start: 'top bottom',
-                        end: 'bottom center',
+                        trigger: '.scene-8',
+                        start: 'bottom top',
+                        endTrigger: '.scene-10',
                         scrub: true,
                     },
                 })
-                    .to('#boy-w-pack', {
-                        position: 'absolute',
-                        left: '50%',
-                        xPercent: -50,
-                        duration: 1,
-                    })
-                    .to({}, { duration: 2 })
-                    .to('#boy-w-pack', {
-                        opacity: 0,
-                        duration: 0.5,
-                    })
-            } else {
-                gsap.to('#boy-w-pack', {
-                    scrollTrigger: {
-                        trigger: '.scene-10',
-                        start: 'bottom bottom',
-                        end: 'bottom center',
-                        scrub: true,
-                    },
-                    opacity: 0,
+                .to('#boy-w-pack-cnt', {
+                    opacity: 1,
+                    duration: 1,
+                })
+                .to({}, { duration: 3 })
+            if (isDesktop || isMobileLandscape) {
+                boyPack.to('#boy-w-pack-cnt', {
+                    xPercent: 50,
+                    duration: 1,
                 })
             }
+            boyPack.to({}, { duration: 4 }).to('#boy-w-pack-cnt', {
+                opacity: 0,
+                duration: 1,
+            })
+
             gsap.fromTo(
                 '.card',
                 {
@@ -101,7 +95,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     scrollTrigger: {
                         trigger: '.scene-10', // Listening to pinHeight
                         start: 'top top',
-                        end: 'bottom bottom',
+                        end: 'bottom center',
                         scrub: true, // Animation progresses with scrolling
                         // markers:true
                     },
@@ -121,10 +115,23 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     duration: 10,
                 })
                 .to({}, { duration: 100 })
-                .to('#clouds-back', {
-                    duration: 5,
-                    height: isDesktop ? '42vh' : isMobileLandscape ? '80vh' : isTablet ? '38vh' : '70vh',
-                })
+                .to(
+                    '#clouds-back',
+                    {
+                        duration: 5,
+                        height: isDesktop ? '42vh' : isMobileLandscape ? '80vh' : isTablet ? '38vh' : '70vh',
+                    },
+                    'step3'
+                )
+                .to(
+                    '#clouds-front',
+                    {
+                        duration: 5,
+                        opacity: 0,
+                        overwrite: 'auto',
+                    },
+                    'step3'
+                )
         }
     )
 
@@ -147,6 +154,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             opacity: 0.001,
             duration: 0.5,
         })
+
     ScrollTrigger.batch('.fade-in', {
         onEnter: (batch) =>
             gsap.to(batch, {
@@ -244,15 +252,20 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 
     const animCanvas2 = document.getElementById('boy-w-pack')
-    const animCanvas3 = document.getElementById('boy-w-pack-foot')
-    if (animCanvas2 && animCanvas3) {
-        getFrames('/images/boy_webp_frames/dormikind_boy_', 149, 4).then((frames) => {
+    if (animCanvas2) {
+        getFrames('/images/boy_only_webp/dormikind_boy_', 148, 2).then((frames) => {
             setCanvas(animCanvas2, frames, {
-                trigger: '.scene-8',
-                start: 'bottom center',
-                end: '300%',
+                trigger: '.scene-10',
+                start: 'top bottom',
+                end: 'bottom top',
                 scrub: true,
             })
+        })
+    }
+
+    const animCanvas3 = document.getElementById('boy-w-pack-foot')
+    if (animCanvas3) {
+        getFrames('/images/foot_webp_frames/foot_pack_', 130, 2).then((frames) => {
             setCanvas(animCanvas3, frames, {
                 trigger: '.scene-24',
                 start: 'top -50%',

@@ -4,36 +4,31 @@
     <body class="font-nunito font-normal text-white">
         <div class="fixed inset-0 bg-[url('/images/night-bg-new.png')] bg-cover bg-top bg-no-repeat"></div>
         <div
-            class="relative flex min-h-screen flex-col overflow-hidden pt-[4.8rem] before:absolute before:inset-0 before:top-16 before:z-10 before:bg-[url('/images/stars.png')] before:bg-size-[100%_auto] before:bg-repeat-y md:pt-[7.2rem] md:before:top-[5.7rem] md:before:bg-[url('/images/stars-md.png')] xl:pt-0 xl:before:bg-[url('/images/stars-xl.png')]">
+            class="relative flex min-h-screen flex-col overflow-hidden pt-20 before:absolute before:inset-0 before:top-16 before:bg-[url('/images/stars.png')] before:bg-size-[100%_auto] before:bg-repeat-y md:before:top-[5.7rem] md:before:bg-[url('/images/stars-md.png')] xl:before:bg-[url('/images/stars-xl.png')] lg:pt-0">
             {% include '../components/header.njk' %}
-            <main class="relative z-20">
-                <div class="absolute inset-x-0">
-                    <div class="xl:container xl:flex">
-                        <div class="hidden xl:block xl:pt-24 xl:pl-46">
-                            <img src="/images/boy404.png" alt="" />
-                        </div>
-                        <div class="mls:h-[38vh] mx-auto flex h-[36vh] w-min flex-col items-center justify-center gap-y-3.5 xl:m-0 xl:h-[50vh] xl:pl-7">
-                            <div class="leading-my-109 text-center text-[2.5rem] font-extrabold whitespace-nowrap uppercase md:text-6xl xl:text-[6.25rem]">
-                                <h1>ошибка 404</h1>
-                                <p class="text-[0.515em]">Что-то пошло не так...</p>
-                            </div>
-                            <p class="text-sm/my-109 font-light md:text-base xl:text-xl">
-                                Неправильно набран адрес или такой страницы больше не существует.<br />Вернитесь на <a class="font-bold underline hover:no-underline" href="">главную</a> или почитайте
-                                <a class="font-bold underline hover:no-underline" href="">случайную статью.</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </main>
-            <div class="relative mt-auto">
+            <main class="relative flex grow flex-col items-center">
                 <picture>
                     <source media="((max-width: 932px) and (max-height:430px) and (orientation: landscape))" srcset="/images/foot404-xl.png" />
                     <source media="(min-width: 1024px)" srcset="/images/foot404-xl.png" />
                     <source media="(min-width: 768px)" srcset="/images/foot404-md.png" />
-                    <img class="mls:h-[27vh] w-full" src="/images/foot404.png" alt="" />
+                    <img class="mls:h-[27vh] absolute bottom-0 left-0 w-full" src="/images/foot404.png" alt="" />
                 </picture>
-                <img class="mls:left-[5%] mls:translate-0 absolute bottom-10 left-1/2 w-[42vh] -translate-x-1/2 xl:hidden" src="/images/boy404.png" alt="" />
-            </div>
+                <div class="mls:flex-row relative container flex grow flex-col-reverse items-center lg:flex-row">
+                    <div class="mls:w-auto xl:w-5/12">
+                        <img class="mls:max-h-[70vh] ml-auto max-h-full" src="/images/boy404.png" alt="" />
+                    </div>
+                    <div class="mls:self-start mx-auto flex w-min grow flex-col items-center justify-center gap-y-3.5 pt-[6vw] lg:m-0 lg:self-start lg:pl-7">
+                        <div class="leading-my-109 text-center text-[2.5rem] font-extrabold whitespace-nowrap uppercase md:text-6xl xl:text-[6.25rem]">
+                            <h1>ошибка 404</h1>
+                            <p class="text-[0.515em]">Что-то пошло не так...</p>
+                        </div>
+                        <p class="text-sm/my-109 font-light md:text-base xl:text-xl">
+                            Неправильно набран адрес или такой страницы больше не существует.<br />Вернитесь на <a class="font-bold underline hover:no-underline" href="">главную</a> или почитайте
+                            <a class="font-bold underline hover:no-underline" href="">случайную статью.</a>
+                        </p>
+                    </div>
+                </div>
+            </main>
         </div>
     </body>
 </html>
