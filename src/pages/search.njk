@@ -1,0 +1,27 @@
+{% extends 'layouts/page.njk' %} {% block content %}
+<div class="container">
+    <div class="fade-in md:px-[7.4rem] xl:px-[31.7rem]">{% include 'components/search.njk' %}</div>
+    <div class="fade-in my-5 text-sm xl:my-12 xl:text-[1.44rem]">Результаты по запросу <span class="font-bold">«нарушения сна»</span>:</div>
+
+    <div class="mb-8 grid gap-y-8">
+        {% for item in search_table %}
+        <div class="group flex flex-col gap-y-4 md:flex-row md:items-center md:gap-x-3.5 xl:gap-y-8">
+            <div class="fade-in aspect-[1.5] overflow-clip rounded-4xl md:w-1/4 md:shrink-0 xl:w-60">
+                <img class="h-full w-full object-cover" src="{{ item.img}}" alt="" />
+            </div>
+            <div class="space-y-4">
+                <div class="fade-in text-sm/my-109 decoration-my-yellow font-bold uppercase underline-offset-9 group-hover:underline xl:text-[1.44rem]">{{ item.title }}</div>
+                <div class="fade-in text-xs/my-109 xl:text-base/my-109">{{ item.value }}</div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="fade-in flex justify-center gap-x-0.5 text-xl font-extrabold md:gap-x-1 md:text-[1.63rem] xl:text-[2.19rem]">
+        {% for i in [1, 2, 3, 4] %}
+        <a class="pagi__item{% if i == 1%} active{% endif %}" href="">{{ i }}</a>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

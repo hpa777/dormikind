@@ -17,7 +17,9 @@
                         </svg>
                     </div>
                 </dt>
-                <dd class="faq__answer h-0 overflow-hidden md:px-5 xl:px-[2.6rem]">{{ item.answer | safe }}</dd>
+                <div>
+                    <dd class="faq__answer h-0 overflow-hidden md:px-5 xl:px-[2.6rem]">{{ item.answer | safe }}</dd>
+                </div>
             </div>
             {% endfor %}
 

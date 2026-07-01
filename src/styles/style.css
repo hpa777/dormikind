@@ -64,36 +64,32 @@
     }
 }
 
-.scene-24,
-#boy-w-pack-foot {
-    /* Принудительный вынос на GPU */
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
-
-    /* Подсказка браузеру */
-    will-change: opacity;
-
-    /* Устранение артефактов отрисовки */
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-
-    /* Сглаживание */
-    -webkit-perspective: 1000;
-    perspective: 1000;
-}
 @layer components {
-    .dorm-text :where(p, h2, ul) {
+    .dorm-text :where(p, h2, h3, ul, ol) {
         @apply text-sm/my-109 font-light md:text-base/my-109 xl:text-[1.44rem] text-justify;
     }
     
-    .dorm-text > :where(p:not(:last-child), h2, ul) {
+    .dorm-text :where(p:not(:last-child), h2, h3, ul, ol) {
         @apply mb-4 xl:mb-8;
     }
-    .dorm-text > :where(h2) {
+    .dorm-text :where(h2, h3) {
         @apply font-bold uppercase;
     }
-    .dorm-text > :where(ul) {
+    .dorm-text :where(ul) {
         @apply list-disc space-y-2 pl-10;
+    }
+    .dorm-text :where(ol) {
+        @apply list-decimal space-y-2 pl-10;
+    }
+
+    .faq__answer :where(p, ul) {
+        @apply text-sm leading-[1.2] md:text-[0.94rem] xl:text-[1.44rem];
+    }
+    .faq__answer :where(p:not(:last-child)) {
+        @apply mb-2.5
+    }
+    .faq__answer :where(a) {
+        @apply underline decoration-my-yellow hover:no-underline underline-offset-5; 
     }
 }
 .pagi__item {
@@ -109,12 +105,7 @@
     @apply bg-none bg-my-violet text-white;
 }
 
-.faq__answer :where(p, ul) {
-    @apply text-sm leading-[1.2] md:text-[0.94rem] xl:text-[1.44rem];
-}
-.faq__answer :where(p:not(:last-child)) {
-    @apply mb-2.5
-}
+
 .faq__topic.active + .faq__body,
 .faq__question.active + .faq__answer {
     @apply h-auto;
@@ -136,4 +127,17 @@
 }
 .extendable.active .extendable__btn::before {
     content: 'Свернуть инструкцию';
+}
+#scroll-prompt.show {
+    opacity: 1;
+    visibility: visible;  
+    animation: floatAround 2s ease-in-out infinite;
+}
+@keyframes floatAround {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-10px); /* Амплитуда 10px */
+  }
 }

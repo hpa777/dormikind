@@ -36,18 +36,37 @@
         <rect y="31.1782" width="40" height="3.82175" fill="white" />
     </svg>
 </button>
-<nav class="mls:text-left text-my-violet fixed inset-0 z-54 container hidden bg-white py-8 peer-[.active]:block md:bottom-auto md:text-center xl:hidden!">
-    <div class="border-my-violet/30 mb-10 border-b pb-5">
-        <svg width="209" height="30" class="inline-block w-40">
+<nav class="mls:text-left text-my-violet fixed inset-0 z-54 container hidden bg-white py-6 peer-[.active]:block md:bottom-auto md:pb-16 xl:hidden!">
+    <div class="border-my-violet/30 mb-6 border-b pb-5 md:text-center">
+        <svg width="209" height="30" class="inline-block w-29 md:w-40">
             <use href="#main-logo"></use>
         </svg>
     </div>
-    <ul class="mls:grid-cols-2 grid gap-y-8 text-xl">
-        <li class="mls:pl-16"><a href="">Особенности сна</a></li>
-        <li class="mls:pl-16"><a href="">О Дормикинде</a></li>
-        <li class="mls:pl-16"><a href="">Специалистам</a></li>
-        <li class="mls:pl-16"><a href="">Родителям</a></li>
-        <li class="mls:pl-16"><a href="">Где купить</a></li>
+    <ul class="mls:columns-2 space-y-3.5 text-base md:columns-2 md:pl-8 md:text-xl/snug">
+        <li class="mls:pl-16 mls:last:pb-8 md:last:pb-8">
+            <a href="">Особенности сна</a>
+            <ul class="list-inside list-disc pl-0.5">
+                <li>ребенка 1-3 года</li>
+                <li>ребенка старше 3х лет</li>
+            </ul>
+        </li>
+        <li class="mls:pl-16 mls:last:pb-8 md:last:pb-8">
+            <a href="">О Дормикинде</a>
+            <ul class="list-inside list-disc pl-0.5">
+                <li>О препарате</li>
+                <li>Инструкция</li>
+            </ul>
+        </li>
+        <li class="mls:pl-16 mls:last:pb-8 md:last:pb-8"><a href="">Специалистам</a></li>
+        <li class="mls:pl-16 mls:last:pb-8 md:last:pb-8">
+            <a href="">Родителям</a>
+            <ul class="list-inside list-disc pl-0.5">
+                <li>ребенка 1-3 года</li>
+                <li>ребенка старше 3х лет</li>
+                <li>Вопрос/ответ</li>
+            </ul>
+        </li>
+        <li class="mls:pl-16 mls:last:pb-8 md:last:pb-8"><a href="">Где купить</a></li>
     </ul>
     <button class="absolute top-8 right-7 text-[2rem] leading-[0.5]" onclick="document.getElementById('mob-menu').classList.remove('active')">&times;</button>
 </nav>

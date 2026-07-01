@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ru" class="{{ pageClass }}">
+<html lang="ru" class="page">
     {% include 'components/head.njk' %}
     <body class="font-nunito font-normal text-white">
         <!-- Header-->
@@ -40,7 +40,7 @@
                         <canvas
                             id="my-canvas"
                             style="backface-visibility: hidden; transform: translateZ(0)"
-                            class="mls:h-screen absolute right-0 bottom-0 aspect-[2] h-[80vh] opacity-0 md:h-[95vh] lg:-right-12 lg:-bottom-4 xl:bottom-0 xl:h-screen"></canvas>
+                            class="ret:-bottom-24 mls:h-screen absolute right-0 bottom-0 aspect-[2] h-[80vh] opacity-0 md:h-[95vh] lg:-right-12 lg:-bottom-4 xl:bottom-0 xl:h-screen"></canvas>
                     </div>
                     <!--/Pack-->
                     <!--Clouds Front-->
@@ -81,7 +81,7 @@
                                 src="/images/star-f-1.png"
                                 alt="" />
                         </div>
-                        <div scroll-zoom class="col-start-6 row-start-18 grid place-content-center md:col-start-9 md:row-start-9 xl:col-start-8 xl:row-start-10 xl:mr-20">
+                        <div scroll-zoom class="col-start-10 row-start-21 grid place-content-center md:col-start-9 md:row-start-9 xl:col-start-8 xl:row-start-10 xl:mr-20">
                             <img
                                 data-move="to"
                                 data-opacity="1"
@@ -133,7 +133,8 @@
                             class="mls:h-full mls:py-0 mls:flex mls:flex-col mls:justify-center container pt-[5.7rem] opacity-0 md:pt-38 xl:pt-40">
                             <p class="mls:text-6xl text-[2.56rem] leading-[1.1] font-extrabold uppercase md:text-[6.63rem] xl:text-[11.6rem]">Сказочный сон</p>
                             <p class="text-[1.31rem] uppercase md:text-[1.88rem] xl:text-[2.81rem]">для активности днём</p>
-                            <div class="mt-[1.2rem] flex h-[1.81rem] text-sm md:h-[2.19rem] md:text-[0.94rem] xl:mt-14 xl:h-[3.44rem] xl:text-xl">
+                            <p class="tex-[0.94rem] max-w-84 md:text-xl xl:mt-8 xl:max-w-160 xl:text-3xl">Лекарственный препарат при беспокойстве и нарушениях сна у детей до 6 лет</p>
+                            <!--div class="mt-[1.2rem] flex h-[1.81rem] text-sm md:h-[2.19rem] md:text-[0.94rem] xl:mt-14 xl:h-[3.44rem] xl:text-xl">
                                 <a href="" class="group text-my-violet flex transition-colors hover:text-white">
                                     <span class="grid aspect-square h-full place-content-center rounded-full border border-white bg-white px-2 transition-all group-hover:rotate-90 group-hover:bg-transparent">
                                         <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg" class="max-w-full">
@@ -147,7 +148,7 @@
                                     >
                                 </a>
                                 <a href="" class="hover:text-my-violet ml-4 grid h-full place-content-center rounded-full border border-white px-3.5 transition-colors hover:bg-white md:px-7 xl:px-[2.4rem]">Инструкция</a>
-                            </div>
+                            </div-->
                         </div>
                     </div>
                     <!--/Scene 1 text-->
@@ -281,7 +282,7 @@
                         data-move="to"
                         data-opacity="1"
                         data-start="top bottom"
-                        class="mls:h-[8vw] absolute bottom-0 left-0 h-[22vw] w-full bg-[url('/images/clouds-back-lg.png')] bg-cover opacity-0 lg:h-[10vw]"></div>
+                        class="ret:h-[32vh] mls:h-[8vw] absolute bottom-0 left-0 h-[22vw] w-full bg-[url('/images/clouds-back-lg.png')] bg-cover opacity-0 lg:h-[10vw]"></div>
                 </div>
             </div>
             <!--/Scene8-->
@@ -459,7 +460,7 @@
                             </div>
                         </div>
                         <div class="relative grow lg:w-1/2">
-                            <canvas id="boy-w-pack-foot" class="mls:-bottom-[12vw] absolute -bottom-[9vh] left-0 aspect-[0.72] w-full lg:w-[90%]"></canvas>
+                            <canvas id="boy-w-pack-foot" class="ret:bottom-0 ret:w-[120%] mls:-bottom-[12vw] absolute -bottom-[9vh] left-0 aspect-[0.81875] w-full lg:w-[90%]"></canvas>
                         </div>
                     </div>
                 </div>
@@ -522,11 +523,52 @@
             </div>
             <!--/Footer-->
         </main>
+        <div id="scroll-prompt" class="invisible fixed bottom-20 left-1/2 grid aspect-square w-[3.13rem] place-content-center rounded-full border-2 border-white opacity-0">
+            <svg style="width:1.87rem;height: 1.25rem;" width="30" height="20" viewBox="0 0 30 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 1.00002L15.098 17.9997L29 1.00002" stroke="white" stroke-width="2" stroke-linecap="round" />
+            </svg>
+        </div>
         <script type="module" src="/src/js/main.js"></script>
         <script>
             window.scrollTo(0, 0)
             history.scrollRestoration = 'manual'
             //history.scrollRestoration = 'auto'
+            document.addEventListener('DOMContentLoaded', () => {
+                const prompt = document.getElementById('scroll-prompt')
+                let scrollTimeout
+
+                // Функция проверки: доскроллил ли пользователь до самого конца
+                function isPageEnd() {
+                    // Высота прокрученной части + высота окна >= полной высоте документа
+                    return window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 5
+                }
+
+                // Функция, которая показывает плашку
+                function showPrompt() {
+                    if (!isPageEnd()) {
+                        prompt.classList.add('show')
+                    }
+                }
+
+                // Функция сброса таймера при активности
+                function resetTimer() {
+                    // Сразу прячем плашку при любом скролле или действии
+                    prompt.classList.remove('show')
+
+                    // Очищаем старый таймер
+                    clearTimeout(scrollTimeout)
+
+                    // Запускаем новый таймер на 30 секунд (30000 миллисекунд)
+                    scrollTimeout = setTimeout(showPrompt, 3000)
+                }
+
+                // Отслеживаем скролл и движения пользователя
+                window.addEventListener('scroll', resetTimer)
+                window.addEventListener('touchstart', resetTimer) // Для мобильных
+
+                // Запускаем таймер при первой загрузке страницы
+                resetTimer()
+            })
         </script>
     </body>
 </html>

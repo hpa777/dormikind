@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const mm = gsap.matchMedia()
     mm.add(
         {
+            isRetina: '(min-width: 2000px)',
             isDesktop: '(min-width: 1024px)',
             isMobile: '(max-width: 767px)',
             isMobileLandscape: '(max-width: 932px) and (orientation: landscape)',
@@ -35,7 +36,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             reduceMotion: '(prefers-reduced-motion: reduce)',
         },
         (context) => {
-            let { isDesktop, isMobile, isTablet, reduceMotion, isMobileLandscape } = context.conditions
+            let { isDesktop, isMobile, isTablet, reduceMotion, isMobileLandscape, isRetina } = context.conditions
 
             const starBullits = gsap.utils.toArray('.star-bullit')
             gsap.set(starBullits, { clearProps: 'left,top,transform' })
@@ -111,7 +112,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 },
             })
                 .to('#clouds-back', {
-                    height: '26vh',
+                    height: isRetina ? '36vh' : '26vh', // '26vh',
                     duration: 10,
                 })
                 .to({}, { duration: 100 })

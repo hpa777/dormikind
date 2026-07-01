@@ -27,5 +27,18 @@ export default defineConfig(({ command }) => {
         }),
         */
         ],
+        build: {
+            manifest: true,
+            rollupOptions: {
+                output: {
+                    // Настройка для JS-файлов
+                    entryFileNames: 'assets/[name].js',
+                    // Настройка для разделяемых (chunk) JS-файлов
+                    chunkFileNames: 'assets/[name].js',
+                    // Настройка для статических ресурсов (CSS, изображения и т.д.)
+                    assetFileNames: 'assets/[name].[ext]',
+                },
+            },
+        },
     }
 })

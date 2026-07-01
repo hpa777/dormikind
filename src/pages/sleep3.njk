@@ -1,5 +1,5 @@
 {% extends 'layouts/page.njk' %} {% block content %}
-<div class="container">
+<div class="container relative z-10">
     <div class="dorm-text relative xl:w-1/2">
         <p class="fade-in">
             «Спит сном младенца» - часто говорим мы, имея в виду глубокий, крепкий, спокойный сон. Однако, как показывают исследования специалистов в области сна, мы совершенно не правы. Сон ребенка сходен со сном
@@ -40,11 +40,11 @@
     </div>
 </div>
 {% endblock %} {% block after_content %}
-<div class="ret:relative ret:container">
+<div class="ret:relative">
     <picture>
         <source media="(min-width: 1280px)" srcset="/images/sleep_boy-xl.png" />
         <source media="(min-width: 768px)" srcset="/images/sleep_boy-md.png" />
-        <img src="/images/sleep_boy.png" alt="" class="fade-in mls:-mb-52 mls:-mt-32 ret:-bottom-120 -mt-16 -mb-24 w-full md:-mt-44 md:-mb-40 xl:absolute xl:right-0 xl:bottom-36 xl:m-0 xl:w-auto" />
+        <img src="/images/sleep_boy.png" alt="" class="fade-in mls:-mb-52 mls:-mt-32 ret:-bottom-64 -mt-16 -mb-24 w-full md:-mt-44 md:-mb-40 xl:absolute xl:right-0 xl:bottom-36 xl:m-0 xl:w-auto" />
     </picture>
 </div>
 {% endblock %}
